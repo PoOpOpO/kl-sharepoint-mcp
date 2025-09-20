@@ -1,169 +1,298 @@
-import base64, os
-from functools import wraps
-from typing import Optional, Dict, Any
-from .common import logger, mcp, SHP_DOC_LIBRARY, sp_context
-from .resources import list_folders, list_documents, get_document_content
+"""MCP tool definitions for interacting with Microsoft 365 resources."""
 
-# Helper functions to reduce code duplication
-def _get_path(folder: str = "", file: Optional[str] = None) -> str:
-    """Construct SharePoint path from components"""
-    path = f"{SHP_DOC_LIBRARY}/{folder}".rstrip('/')
-    return f"{path}/{file}" if file else path
+from __future__ import annotations
 
-def _handle_sp_operation(func):
-    """Decorator for SharePoint operations with error handling"""
-    @wraps(func)
-    async def wrapper(*args, **kwargs):
-        try:
-            return await func(*args, **kwargs)
-        except Exception as e:
-            logger.error(f"Error in {func.__name__}: {str(e)}")
-            return {"success": False, "message": f"Operation failed: {str(e)}"}
-    return wrapper
+import asyncio
+from typing import Iterable, List, Optional
 
-def _file_success_response(file_obj, message: str) -> Dict[str, Any]:
-    """Standard success response for file operations"""
+from .auth import AuthenticationError, AuthenticationFlowNotFound
+from .common import auth_manager, graph_client, logger, mcp
+from .graph import GraphAPIError
+
+
+async def _run_async(func, *args, **kwargs):
+    return await asyncio.to_thread(func, *args, **kwargs)
+
+
+def _error_response(exc: Exception, *, operation: str) -> dict:
+    logger.error("%s failed: %s", operation, exc)
     return {
-        "success": True,
-        "message": message,
-        "file": {"name": file_obj.name, "url": file_obj.serverRelativeUrl}
+        "success": False,
+        "operation": operation,
+        "error": exc.__class__.__name__,
+        "message": str(exc),
     }
 
-# Tool implementations
-@mcp.tool(name="List_SharePoint_Folders", description="List folders in the specified SharePoint directory or root if not specified")
-async def list_folders_tool(parent_folder: Optional[str] = None):
-    """List folders in the specified SharePoint directory or root if not specified"""
-    return list_folders(parent_folder)
 
-@mcp.tool(name="List_SharePoint_Documents", description="List all documents in a specified SharePoint folder")
-async def list_documents_tool(folder_name: str):
-    """List all documents in a specified SharePoint folder"""
-    return list_documents(folder_name)
-
-@mcp.tool(name="Get_Document_Content", description="Get content of a document in SharePoint")
-async def get_document_content_tool(folder_name: str, file_name: str):
-    """Get content of a document in SharePoint"""
-    return get_document_content(folder_name, file_name)
-
-@mcp.tool(name="Create_Folder", description="Create a new folder in the specified directory or root if not specified")
-@_handle_sp_operation
-async def create_folder(folder_name: str, parent_folder: Optional[str] = None):
-    """Create a new folder in the specified directory or root if not specified"""
-    parent_path = _get_path(parent_folder or "")
-    logger.info(f"Creating folder '{folder_name}' in {parent_folder or 'root directory'}")
-    
-    # Check for existing folder
-    if any(f["name"] == folder_name for f in list_folders(parent_folder)):
-        return {"success": False, "message": f"Folder {folder_name} already exists"}
-    
-    # Create folder
-    parent = sp_context.web.get_folder_by_server_relative_url(parent_path)
-    new_folder = parent.folders.add(folder_name)
-    sp_context.execute_query()
-    
-    return _file_success_response(new_folder, f"Folder {folder_name} created successfully")
-
-@mcp.tool(name="Upload_Document", description="Upload a new file to a SharePoint directory")
-@_handle_sp_operation
-async def upload_document(folder_name: str, file_name: str, content: str, is_base64: bool = False):
-    """Upload a new file to a directory"""
-    logger.info(f"Uploading document {file_name} to folder {folder_name}")
-    
-    # Convert content and upload
-    file_content = base64.b64decode(content) if is_base64 else content.encode('utf-8')
-    folder = sp_context.web.get_folder_by_server_relative_url(_get_path(folder_name))
-    uploaded_file = folder.upload_file(file_name, file_content)
-    sp_context.execute_query()
-    
-    return _file_success_response(uploaded_file, f"File {file_name} uploaded successfully")
-
-@mcp.tool(name="Upload_Document_From_Path", description="Upload a file directly from a file path to SharePoint")
-@_handle_sp_operation
-async def upload_document_from_path(folder_name: str, file_path: str, new_file_name: Optional[str] = None):
-    """Upload a file directly from a path without needing to convert to base64 first"""
-    logger.info(f"Uploading document from path {file_path} to folder {folder_name}")
-    
+# ---------------------------------------------------------------------------
+# Authentication tools
+# ---------------------------------------------------------------------------
+@mcp.tool(
+    name="Start_Device_Login",
+    description=(
+        "Inicia un flujo de autenticación con código de dispositivo para elegir "
+        "la cuenta de Microsoft 365 que se utilizará en esta sesión."
+    ),
+)
+async def start_device_login():
     try:
-        with open(file_path, "rb") as file:
-            file_content = file.read()
-        
-        if not new_file_name:
-            new_file_name = os.path.basename(file_path)
-            
-        folder = sp_context.web.get_folder_by_server_relative_url(_get_path(folder_name))
-        uploaded_file = folder.upload_file(new_file_name, file_content)
-        sp_context.execute_query()
-        
-        return _file_success_response(uploaded_file, f"File {new_file_name} uploaded successfully")
-    except Exception as e:
-        logger.error(f"Error uploading file from path: {str(e)}")
-        raise
+        return await _run_async(auth_manager.start_device_login)
+    except AuthenticationError as exc:
+        return _error_response(exc, operation="start_device_login")
 
-@mcp.tool(name="Update_Document", description="Update an existing document in a SharePoint directory")
-@_handle_sp_operation
-async def update_document(folder_name: str, file_name: str, content: str, is_base64: bool = False):
-    """Update an existing document in a SharePoint directory"""
-    logger.info(f"Updating document {file_name} in folder {folder_name}")
-    
-    # Check if file exists
-    file_path = _get_path(folder_name, file_name)
-    file = sp_context.web.get_file_by_server_relative_url(file_path)
-    sp_context.load(file, ["Exists", "Name", "ServerRelativeUrl"])
-    sp_context.execute_query()
-    
-    if not file.exists:
-        return {"success": False, "message": f"File {file_name} does not exist in folder {folder_name}"}
-    
-    # Update file using upload method
-    file_content = base64.b64decode(content) if is_base64 else content.encode('utf-8')
-    folder = sp_context.web.get_folder_by_server_relative_url(_get_path(folder_name))
-    updated_file = folder.upload_file(file_name, file_content)
-    sp_context.execute_query()
-    
-    return _file_success_response(updated_file, f"File {file_name} updated successfully")
 
-@mcp.tool(name="Delete_Document", description="Delete a document from a SharePoint directory")
-@_handle_sp_operation
-async def delete_document(folder_name: str, file_name: str):
-    """Delete a document from a directory"""
-    logger.info(f"Deleting document {file_name} from folder {folder_name}")
-    
-    # Check if file exists and delete
-    file = sp_context.web.get_file_by_server_relative_url(_get_path(folder_name, file_name))
-    sp_context.load(file, ["Exists"])
-    sp_context.execute_query()
-    
-    if not file.exists:
-        return {"success": False, "message": f"File {file_name} does not exist in folder {folder_name}"}
-    
-    file.delete_object()
-    sp_context.execute_query()
-    return {"success": True, "message": f"File {file_name} deleted successfully"}
+@mcp.tool(
+    name="Complete_Device_Login",
+    description=(
+        "Completa el flujo de autenticación iniciado previamente con Start_Device_Login."),
+)
+async def complete_device_login(flow_id: str, timeout_seconds: Optional[int] = None):
+    try:
+        return await _run_async(auth_manager.complete_device_login, flow_id, timeout=timeout_seconds)
+    except AuthenticationFlowNotFound as exc:
+        return _error_response(exc, operation="complete_device_login")
+    except AuthenticationError as exc:
+        return _error_response(exc, operation="complete_device_login")
 
-@mcp.tool(name="Delete_Folder", description="Delete an empty folder from SharePoint")
-@_handle_sp_operation
-async def delete_folder(folder_path: str):
-    """Delete an empty folder from SharePoint"""
-    logger.info(f"Deleting folder: {folder_path}")
-    
-    # Get folder and check if it exists and is empty
-    full_path = _get_path(folder_path)
-    folder = sp_context.web.get_folder_by_server_relative_url(full_path)
-    sp_context.load(folder)
-    sp_context.load(folder.files)
-    sp_context.load(folder.folders)
-    sp_context.execute_query()
-    
-    if not hasattr(folder, 'exists') or not folder.exists:
-        return {"success": False, "message": f"Folder '{folder_path}' does not exist"}
-    
-    if len(folder.files) > 0:
-        return {"success": False, "message": f"Folder contains {len(folder.files)} files"}
-    
-    if len(folder.folders) > 0:
-        return {"success": False, "message": f"Folder contains {len(folder.folders)} subfolders"}
-    
-    # Delete the empty folder
-    folder.delete_object()
-    sp_context.execute_query()
-    return {"success": True, "message": f"Folder '{folder_path}' deleted successfully"}
+
+@mcp.tool(
+    name="List_Available_Accounts",
+    description="Lista las cuentas de Microsoft disponibles en la caché local de este dispositivo.",
+)
+async def list_available_accounts():
+    accounts = await _run_async(auth_manager.list_accounts)
+    return [account.__dict__ for account in accounts]
+
+
+@mcp.tool(
+    name="Set_Active_Account",
+    description="Selecciona la cuenta de Microsoft 365 con la que operará el conector.",
+)
+async def set_active_account(
+    home_account_id: Optional[str] = None,
+    username: Optional[str] = None,
+):
+    try:
+        summary = await _run_async(auth_manager.set_active_account, home_account_id=home_account_id, username=username)
+        return {
+            "success": True,
+            "account": summary.__dict__ if summary else None,
+        }
+    except AuthenticationError as exc:
+        return _error_response(exc, operation="set_active_account")
+
+
+@mcp.tool(
+    name="Get_Auth_Context",
+    description="Devuelve información de depuración sobre el estado de autenticación actual.",
+)
+async def get_auth_context():
+    return await _run_async(auth_manager.get_context)
+
+
+# ---------------------------------------------------------------------------
+# Drive and site discovery tools
+# ---------------------------------------------------------------------------
+@mcp.tool(
+    name="List_My_Drives",
+    description="Lista todos los drives (OneDrive personal y bibliotecas de documentos) disponibles para la cuenta activa.",
+)
+async def list_my_drives():
+    try:
+        return await _run_async(graph_client.list_my_drives)
+    except (AuthenticationError, GraphAPIError) as exc:
+        return _error_response(exc, operation="list_my_drives")
+
+
+@mcp.tool(
+    name="Search_SharePoint_Sites",
+    description="Busca sitios de SharePoint accesibles para la cuenta activa.",
+)
+async def search_sharepoint_sites(query: str):
+    try:
+        return await _run_async(graph_client.search_sites, query)
+    except (AuthenticationError, GraphAPIError) as exc:
+        return _error_response(exc, operation="search_sharepoint_sites")
+
+
+@mcp.tool(
+    name="List_Site_Drives",
+    description="Obtiene las bibliotecas de documentos (drives) disponibles en un sitio de SharePoint específico.",
+)
+async def list_site_drives(site_id: Optional[str] = None, site_url: Optional[str] = None):
+    try:
+        return await _run_async(graph_client.list_site_drives, site_id=site_id, site_url=site_url)
+    except (AuthenticationError, GraphAPIError) as exc:
+        return _error_response(exc, operation="list_site_drives")
+
+
+@mcp.tool(
+    name="Set_Active_Drive",
+    description="Selecciona el drive sobre el que se ejecutarán las operaciones de archivos.",
+)
+async def set_active_drive(drive_id: str):
+    try:
+        metadata = await _run_async(graph_client.set_active_drive, drive_id)
+        return {"success": True, "drive": metadata}
+    except (AuthenticationError, GraphAPIError) as exc:
+        return _error_response(exc, operation="set_active_drive")
+
+
+@mcp.tool(
+    name="Get_Graph_Context",
+    description="Muestra el contexto activo (cuenta y drive seleccionado) para Microsoft Graph.",
+)
+async def get_graph_context():
+    return await _run_async(graph_client.get_context)
+
+
+# ---------------------------------------------------------------------------
+# Drive item operations
+# ---------------------------------------------------------------------------
+@mcp.tool(
+    name="List_Drive_Items",
+    description="Lista los elementos dentro de una carpeta del drive activo o de un drive especificado.",
+)
+async def list_drive_items(path: Optional[str] = None, drive_id: Optional[str] = None):
+    try:
+        return await _run_async(graph_client.list_items, drive_id=drive_id, path=path)
+    except (AuthenticationError, GraphAPIError) as exc:
+        return _error_response(exc, operation="list_drive_items")
+
+
+@mcp.tool(
+    name="Get_Drive_Item_Metadata",
+    description="Obtiene metadatos detallados de un elemento del drive.",
+)
+async def get_drive_item_metadata(path: str, drive_id: Optional[str] = None):
+    try:
+        return await _run_async(graph_client.get_item_metadata, drive_id=drive_id, path=path)
+    except (AuthenticationError, GraphAPIError) as exc:
+        return _error_response(exc, operation="get_drive_item_metadata")
+
+
+@mcp.tool(
+    name="Get_Drive_Item_Content",
+    description="Recupera el contenido de un archivo del drive (en texto plano o base64 según corresponda).",
+)
+async def get_drive_item_content(path: str, drive_id: Optional[str] = None):
+    try:
+        return await _run_async(graph_client.get_item_content, drive_id=drive_id, path=path)
+    except (AuthenticationError, GraphAPIError) as exc:
+        return _error_response(exc, operation="get_drive_item_content")
+
+
+@mcp.tool(
+    name="Create_Drive_Folder",
+    description="Crea una carpeta nueva en el drive activo o en el drive indicado.",
+)
+async def create_drive_folder(
+    folder_name: str,
+    parent_path: Optional[str] = None,
+    drive_id: Optional[str] = None,
+    conflict_behavior: str = "fail",
+):
+    try:
+        return await _run_async(
+            graph_client.create_folder,
+            folder_name=folder_name,
+            parent_path=parent_path,
+            drive_id=drive_id,
+            conflict_behavior=conflict_behavior,
+        )
+    except (AuthenticationError, GraphAPIError) as exc:
+        return _error_response(exc, operation="create_drive_folder")
+
+
+@mcp.tool(
+    name="Upload_Drive_File",
+    description="Carga un archivo nuevo en el drive (permite contenido en texto o en base64).",
+)
+async def upload_drive_file(
+    item_path: str,
+    content: str,
+    drive_id: Optional[str] = None,
+    is_base64: bool = False,
+    conflict_behavior: str = "fail",
+):
+    try:
+        return await _run_async(
+            graph_client.upload_file,
+            item_path=item_path,
+            content=content,
+            drive_id=drive_id,
+            is_base64=is_base64,
+            conflict_behavior=conflict_behavior,
+        )
+    except (AuthenticationError, GraphAPIError) as exc:
+        return _error_response(exc, operation="upload_drive_file")
+
+
+@mcp.tool(
+    name="Update_Drive_File",
+    description="Actualiza el contenido de un archivo existente en el drive.",
+)
+async def update_drive_file(
+    item_path: str,
+    content: str,
+    drive_id: Optional[str] = None,
+    is_base64: bool = False,
+):
+    try:
+        return await _run_async(
+            graph_client.upload_file,
+            item_path=item_path,
+            content=content,
+            drive_id=drive_id,
+            is_base64=is_base64,
+            conflict_behavior="replace",
+        )
+    except (AuthenticationError, GraphAPIError) as exc:
+        return _error_response(exc, operation="update_drive_file")
+
+
+@mcp.tool(
+    name="Delete_Drive_Item",
+    description="Elimina un archivo o carpeta del drive indicado.",
+)
+async def delete_drive_item(path: str, drive_id: Optional[str] = None):
+    try:
+        return await _run_async(graph_client.delete_item, drive_id=drive_id, path=path)
+    except (AuthenticationError, GraphAPIError) as exc:
+        return _error_response(exc, operation="delete_drive_item")
+
+
+@mcp.tool(
+    name="Search_Drive_Items",
+    description="Busca archivos y carpetas dentro del drive seleccionado.",
+)
+async def search_drive_items(query: str, drive_id: Optional[str] = None):
+    try:
+        return await _run_async(graph_client.search_drive_items, query=query, drive_id=drive_id)
+    except (AuthenticationError, GraphAPIError) as exc:
+        return _error_response(exc, operation="search_drive_items")
+
+
+@mcp.tool(
+    name="Deep_Search_Microsoft365",
+    description=(
+        "Realiza una búsqueda global en SharePoint y OneDrive utilizando Microsoft Graph Search "
+        "para realizar investigaciones profundas sobre los recursos disponibles."
+    ),
+)
+async def deep_search_microsoft365(
+    query: str,
+    entity_types: Optional[List[str]] = None,
+    size: int = 25,
+):
+    try:
+        entities: Optional[Iterable[str]] = entity_types
+        return await _run_async(
+            graph_client.search_everywhere,
+            query=query,
+            entity_types=entities,
+            size=size,
+        )
+    except (AuthenticationError, GraphAPIError) as exc:
+        return _error_response(exc, operation="deep_search_microsoft365")
+
