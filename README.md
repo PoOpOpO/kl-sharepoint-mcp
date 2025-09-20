@@ -1,55 +1,56 @@
-# SharePoint MCP Server
+# Microsoft 365 (SharePoint & OneDrive) MCP Server
 
-[![License: MIT](https://img.shields.io/badge/License-MIT-blue.svg)](https://opensource.org/licenses/MIT)
+[![License: MIT](https://img.shields.io/badge/License-MIT-blue.svg)](LICENSE)
 
-A lightweight MCP Server for seamless integration with Microsoft SharePoint, enabling MCP clients to interact with documents, folders and other SharePoint resources. Developed by [sofias tech](https://github.com/sofias/mcp-sharepoint/).
+A modern Model Context Protocol (MCP) server that lets ChatGPT (and other MCP compatible clients) interact with SharePoint Online and OneDrive content using Microsoft Graph. The server is designed for environments where multiple Microsoft 365 accounts may exist on the same workstation: each session can authenticate with the signed-in Windows/Microsoft account that the user chooses at runtime.
 
-<a href="https://glama.ai/mcp/servers/@Sofias-ai/mcp-sharepoint">
-  <img width="380" height="200" src="https://glama.ai/mcp/servers/@Sofias-ai/mcp-sharepoint/badge" alt="SharePoint Server MCP server" />
-</a>
+> **Why this fork?** The original SharePoint-only implementation relied on application credentials tied to a specific tenant. This version embraces user-centric authentication (device code flow + MSAL cache) so the connector works with whichever account is selected on the machine—ideal for teams that share GPT licenses but want to access their own SharePoint/OneDrive resources.
 
-## Features
+## Feature Highlights
 
-This server provides a clean interface to SharePoint resources through the Model Context Protocol (MCP), with optimized operations for document management.
+- 🔐 **Device-code authentication** – Pick the Microsoft account that is signed into the local machine instead of the ChatGPT account.
+- 👥 **Multi-account aware** – List cached accounts, switch between them, and inspect the active context at any time.
+- 🗂️ **Drive discovery** – Enumerate OneDrive personal drives and SharePoint document libraries.
+- 📄 **Full file lifecycle** – Create folders, upload/update files (text or binary), download contents, and delete resources.
+- 🔍 **Deep research** – Perform scoped searches inside a drive or global Microsoft Graph Search across SharePoint + OneDrive.
+- 📚 **Site exploration** – Search for SharePoint sites and list their document libraries before activating one.
 
-### Tools
+## MCP Tools Overview
 
-The server implements the following tools:
+| Tool | Purpose |
+| --- | --- |
+| `Start_Device_Login` / `Complete_Device_Login` | Initiate and complete the device-code flow for the desired Microsoft account. |
+| `List_Available_Accounts` / `Set_Active_Account` | Inspect cached accounts and pick which one is active. |
+| `Get_Auth_Context` / `Get_Graph_Context` | Debug helpers showing the current authentication + drive context. |
+| `List_My_Drives` / `List_Site_Drives` / `Search_SharePoint_Sites` | Discover drives and sites available to the active account. |
+| `Set_Active_Drive` | Choose the OneDrive or SharePoint library used for subsequent operations. |
+| `List_Drive_Items`, `Get_Drive_Item_Metadata`, `Get_Drive_Item_Content` | Explore the selected drive and read file contents. |
+| `Create_Drive_Folder`, `Upload_Drive_File`, `Update_Drive_File`, `Delete_Drive_Item` | Create, modify, and remove items. |
+| `Search_Drive_Items` | Search inside the currently-selected drive. |
+| `Deep_Search_Microsoft365` | Perform a Microsoft Graph Search across SharePoint and OneDrive resources for deep research scenarios. |
 
-- `List_SharePoint_Folders`: Lists all folders in a specified directory or root
-- `List_SharePoint_Documents`: Fetches all documents within a specified folder
-- `Get_Document_Content`: Retrieves the content of a document (as text or base64-encoded binary)
-- `Create_Folder`: Creates a new folder in the specified directory or root
-- `Upload_Document`: Uploads a new document to a specified folder
-- `Upload_Document`: Uploads large documents from path.
-- `Update_Document`: Updates the content of an existing document
-- `Delete_Document`: Removes a document from a specified folder
-- `Delete_Folder`: Deletes an empty folder from SharePoint
+All tools automatically reuse the selected Microsoft account and drive context.
 
-## Architecture
+## Prerequisites
 
-The server is built with resource efficiency in mind:
+1. **Azure AD App Registration** – Register a *public* client application (no secret) in Azure AD / Entra ID.
+   - Redirect URI can be `https://login.microsoftonline.com/common/oauth2/nativeclient`.
+   - Required delegated permissions: `Files.ReadWrite.All`, `Sites.ReadWrite.All`, `User.Read`, and optionally others you need.
+2. **Client ID** – Note the *Application (client) ID* of the registration.
+3. **Python 3.10+** – A recent Python interpreter for running the MCP server.
 
-- Efficient SharePoint API usage with selective property loading
-- Error handling through decorators for cleaner code
-- Clear separation between resource management and tool implementation
-- Optimized content handling for both text and binary files
+## Configuration
 
-## Setup
+The server is configured with environment variables (you can store them in a `.env` file during development):
 
-1. Register an app in Azure AD with appropriate SharePoint permissions
-2. Obtain the client ID and client secret for the registered app
-3. Identify your SharePoint site URL and the document library path you want to work with
-
-## Environment Variables
-
-The server requires these environment variables:
-
-- `SHP_ID_APP`: Your Azure AD application client ID
-- `SHP_ID_APP_SECRET`: Your Azure AD application client secret
-- `SHP_SITE_URL`: The URL of your SharePoint site
-- `SHP_DOC_LIBRARY`: Path to the document library (default: "Shared Documents/mcp_server")
-- `SHP_TENANT_ID`: Your Microsoft tenant ID
+| Variable | Description |
+| --- | --- |
+| `MCP_GRAPH_CLIENT_ID` | **Required.** Client ID of the Azure AD public application (fallback: `SHP_ID_APP`). |
+| `MCP_GRAPH_TENANT_ID` | Optional. Tenant ID to restrict sign-ins. Defaults to `common` for multi-tenant. |
+| `MCP_GRAPH_SCOPES` | Optional comma-separated scopes. Defaults to `Files.ReadWrite.All,Sites.ReadWrite.All,User.Read,offline_access`. |
+| `MCP_GRAPH_CACHE_PATH` | Optional custom path for the MSAL token cache. Default: `~/.cache/mcp_sharepoint/token_cache.bin`. |
+| `MCP_GRAPH_DEFAULT_DRIVE_ID` | Optional drive ID to auto-select on startup. |
+| `MCP_GRAPH_LOG_LEVEL` / `MCP_GRAPH_LOG_FILE` | Optional logging settings. |
 
 ## Quickstart
 
@@ -59,97 +60,32 @@ The server requires these environment variables:
 pip install -e .
 ```
 
-Or install from PyPI once published:
+### Running the server
 
 ```bash
-pip install mcp-sharepoint-server
+python -m mcp_sharepoint
 ```
 
-Using uv:
+Integrate the binary into your MCP-aware client (ChatGPT desktop, Claude Desktop, MCP Inspector, etc.) by referencing the script `mcp-sharepoint` (created via the console script entry point) or by executing `python -m mcp_sharepoint` directly.
 
-```bash
-uv pip install mcp-sharepoint-server
-```
+### First-time authentication workflow
 
-### Claude Desktop Integration
-
-To integrate with Claude Desktop, update the configuration file:
-
-On Windows: `%APPDATA%/Claude/claude_desktop_config.json`
-On macOS: `~/Library/Application\ Support/Claude/claude_desktop_config.json`
-
-#### Standard Integration
-
-```json
-"mcpServers": {
-  "sharepoint": {
-    "command": "mcp-sharepoint",
-    "env": {
-      "SHP_ID_APP": "your-app-id",
-      "SHP_ID_APP_SECRET": "your-app-secret",
-      "SHP_SITE_URL": "https://your-tenant.sharepoint.com/sites/your-site",
-      "SHP_DOC_LIBRARY": "Shared Documents/your-folder",
-      "SHP_TENANT_ID": "your-tenant-id"
-    }
-  }
-}
-```
-
-#### Using uvx
-
-```json
-"mcpServers": {
-  "sharepoint": {
-    "command": "uvx",
-    "args": [
-      "mcp-sharepoint"
-    ],
-    "env": {
-      "SHP_ID_APP": "your-app-id",
-      "SHP_ID_APP_SECRET": "your-app-secret",
-      "SHP_SITE_URL": "https://your-tenant.sharepoint.com/sites/your-site",
-      "SHP_DOC_LIBRARY": "Shared Documents/your-folder",
-      "SHP_TENANT_ID": "your-tenant-id"
-    }
-  }
-}
-```
+1. Call `Start_Device_Login` from your MCP client.
+2. Follow the `verification_uri` and `user_code` provided to authenticate with the Microsoft account currently logged into the workstation.
+3. Call `Complete_Device_Login` with the returned `flow_id` to finish the sign-in.
+4. (Optional) Use `List_Available_Accounts` and `Set_Active_Account` to switch between cached profiles.
+5. Discover drives with `List_My_Drives` or `List_Site_Drives`, then select one using `Set_Active_Drive`.
+6. You are ready to browse, search, and modify files using the rest of the tools.
 
 ## Development
 
-### Requirements
+```bash
+python -m venv .venv
+source .venv/bin/activate  # Windows: .venv\Scripts\activate
+pip install -e .
+```
 
-- Python 3.10+
-- Dependencies listed in `requirements.txt` and `pyproject.toml`
-
-### Local Development
-
-1. Clone the repository
-2. Create a virtual environment:
-   ```bash
-   python -m venv .venv
-   source .venv/bin/activate  # On Windows: .venv\Scripts\activate
-   ```
-3. Install development dependencies:
-   ```bash
-   pip install -e .
-   ```
-4. Create a `.env` file with your SharePoint credentials:
-   ```
-   SHP_ID_APP=your-app-id
-   SHP_ID_APP_SECRET=your-app-secret
-   SHP_SITE_URL=https://your-tenant.sharepoint.com/sites/your-site
-   SHP_DOC_LIBRARY=Shared Documents/your-folder
-   SHP_TENANT_ID=your-tenant-id
-   ```
-5. Run the server:
-   ```bash
-   python -m mcp_sharepoint
-   ```
-
-### Debugging
-
-For debugging the MCP server, you can use the [MCP Inspector](https://github.com/modelcontextprotocol/inspector):
+Use the [MCP Inspector](https://github.com/modelcontextprotocol/inspector) to debug traffic:
 
 ```bash
 npx @modelcontextprotocol/inspector -- python -m mcp_sharepoint
@@ -157,6 +93,5 @@ npx @modelcontextprotocol/inspector -- python -m mcp_sharepoint
 
 ## License
 
-This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
+This project is released under the [MIT License](LICENSE).
 
-Copyright (c) 2025 sofias tech
