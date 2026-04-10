@@ -13,6 +13,7 @@ import kotlinx.coroutines.delay
 import kotlinx.coroutines.flow.MutableStateFlow
 import kotlinx.coroutines.flow.StateFlow
 import kotlinx.coroutines.flow.asStateFlow
+import kotlinx.coroutines.flow.first
 import kotlinx.coroutines.launch
 
 sealed class QuizUiState {
@@ -72,15 +73,23 @@ class QuizViewModel(application: Application) : AndroidViewModel(application) {
             // Time limit: 1.5 minutes per question in exam mode
             timeRemaining = if (mode == QuizMode.EXAM) questions.size * 90 else 0
 
-            // Load bookmarks
-            repository.getBookmarkedIds().collect { ids ->
-                bookmarkedIds = ids
-            }
+            // Load initial bookmarks (first() returns immediately unlike collect)
+            bookmarkedIds = repository.getBookmarkedIds().first()
 
             if (mode == QuizMode.EXAM && timeRemaining > 0) {
                 startTimer()
             }
             updateState()
+        }
+
+        // Observe bookmark changes continuously in a separate coroutine
+        viewModelScope.launch {
+            repository.getBookmarkedIds().collect { ids ->
+                bookmarkedIds = ids
+                if (_uiState.value is QuizUiState.Ready) {
+                    updateState()
+                }
+            }
         }
     }
 

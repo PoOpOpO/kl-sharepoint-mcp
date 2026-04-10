@@ -1,6 +1,8 @@
 package com.osakidetza.ope.ui.navigation
 
 import androidx.compose.runtime.Composable
+import androidx.compose.runtime.remember
+import androidx.lifecycle.viewmodel.compose.viewModel
 import androidx.navigation.NavType
 import androidx.navigation.compose.NavHost
 import androidx.navigation.compose.composable
@@ -12,6 +14,7 @@ import com.osakidetza.ope.ui.screens.HomeScreen
 import com.osakidetza.ope.ui.screens.QuizScreen
 import com.osakidetza.ope.ui.screens.ResultScreen
 import com.osakidetza.ope.ui.screens.StatsScreen
+import com.osakidetza.ope.viewmodel.QuizViewModel
 
 sealed class Screen(val route: String) {
     object Home : Screen("home")
@@ -75,23 +78,29 @@ fun AppNavigation() {
                 categoryId = categoryId,
                 mode = mode,
                 questionCount = count,
-                onFinished = { result ->
-                    navController.navigate(Screen.Result.route) {
-                        popUpTo(Screen.Home.route)
-                    }
+                onFinished = { _ ->
+                    // Navigate without popping quiz entry so its ViewModel stays alive
+                    navController.navigate(Screen.Result.route)
                 },
                 onBack = { navController.popBackStack() }
             )
         }
 
-        composable(Screen.Result.route) {
+        composable(Screen.Result.route) { backStackEntry ->
+            // Share the QuizViewModel from the quiz back stack entry so we see the Finished state
+            val quizBackStackEntry = remember(backStackEntry) {
+                navController.previousBackStackEntry
+            }
+            val sharedViewModel: QuizViewModel = viewModel(quizBackStackEntry!!)
             ResultScreen(
+                viewModel = sharedViewModel,
                 onHome = {
                     navController.navigate(Screen.Home.route) {
                         popUpTo(Screen.Home.route) { inclusive = true }
                     }
                 },
                 onRetry = {
+                    // Pop result and quiz, returning to CategoryDetail
                     navController.popBackStack()
                     navController.popBackStack()
                 }

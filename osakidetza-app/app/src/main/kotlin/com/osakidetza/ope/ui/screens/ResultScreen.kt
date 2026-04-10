@@ -21,7 +21,6 @@ import androidx.compose.ui.graphics.Brush
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.unit.dp
-import androidx.lifecycle.viewmodel.compose.viewModel
 import com.osakidetza.ope.data.model.AnswerRecord
 import com.osakidetza.ope.data.model.QuizResult
 import com.osakidetza.ope.ui.theme.CorrectGreen
@@ -37,7 +36,7 @@ import com.osakidetza.ope.viewmodel.QuizViewModel
 fun ResultScreen(
     onHome: () -> Unit,
     onRetry: () -> Unit,
-    viewModel: QuizViewModel = viewModel()
+    viewModel: QuizViewModel
 ) {
     val uiState by viewModel.uiState.collectAsState()
     val result = (uiState as? QuizUiState.Finished)?.result ?: return
