@@ -1,0 +1,182 @@
+[
+  {
+    "id": 1,
+    "text": "¿Cuál es el músculo principal de la inspiración?",
+    "options": {
+      "A": "Intercostales externos",
+      "B": "Diafragma",
+      "C": "Esternocleidomastoideo",
+      "D": "Escalenos"
+    },
+    "correct": "B",
+    "explanation": "El diafragma es el principal músculo de la inspiración, responsable de aproximadamente el 70% del trabajo ventilatorio. Al contraerse, desciende y aumenta el volumen de la cavidad torácica."
+  },
+  {
+    "id": 2,
+    "text": "La escala de Ashworth modificada evalúa:",
+    "options": {
+      "A": "El grado de dolor en pacientes neurológicos",
+      "B": "El grado de espasticidad muscular",
+      "C": "La fuerza muscular según escala MRC",
+      "D": "El equilibrio en pacientes con ictus"
+    },
+    "correct": "B",
+    "explanation": "La Escala de Ashworth modificada es una escala clínica que evalúa el grado de espasticidad (hipertonía espástica) en músculos, con puntuaciones de 0 (sin aumento de tono) a 4 (rigidez en flexión o extensión)."
+  },
+  {
+    "id": 3,
+    "text": "¿Cuál es el tendón que se evalúa con el reflejo rotuliano (reflejo patelar)?",
+    "options": {
+      "A": "Tendón del bíceps braquial",
+      "B": "Tendón rotuliano (ligamento patelar)",
+      "C": "Tendón de Aquiles",
+      "D": "Tendón del cuádriceps"
+    },
+    "correct": "B",
+    "explanation": "El reflejo rotuliano se obtiene percutiendo el tendón rotuliano (ligamento patelar), situado entre la rótula y la tuberosidad tibial anterior. Evalúa el segmento medular L3-L4."
+  },
+  {
+    "id": 4,
+    "text": "La terapia con ultrasonidos terapéuticos en fisioterapia produce efectos:",
+    "options": {
+      "A": "Exclusivamente térmicos en los tejidos",
+      "B": "Térmicos (calor profundo) y no térmicos (cavitación, streaming) en los tejidos",
+      "C": "Solo de relajación muscular superficial",
+      "D": "Únicamente antiinflamatorios sin penetración profunda"
+    },
+    "correct": "B",
+    "explanation": "Los ultrasonidos terapéuticos producen efectos térmicos (calentamiento profundo de tejidos) y no térmicos (cavitación estable y microstreaming), que promueven la cicatrización tisular, reducen el espasmo y aumentan la extensibilidad del colágeno."
+  },
+  {
+    "id": 5,
+    "text": "¿Qué es la técnica de Facilitación Neuromuscular Propioceptiva (FNP o PNF)?",
+    "options": {
+      "A": "Una técnica de masaje superficial",
+      "B": "Un método terapéutico que utiliza patrones de movimiento diagonales y técnicas de resistencia para mejorar la función neuromuscular",
+      "C": "Un sistema de electroterapia para estimulación muscular",
+      "D": "Una técnica exclusiva de rehabilitación respiratoria"
+    },
+    "correct": "B",
+    "explanation": "La FNP/PNF es un método de facilitación neuromuscular que utiliza patrones de movimiento diagonales y espirales, junto con técnicas de resistencia, estiramiento y relajación, para mejorar la fuerza, flexibilidad y coordinación neuromuscular."
+  },
+  {
+    "id": 6,
+    "text": "¿Cuál de las siguientes es una contraindicación absoluta para la aplicación de calor superficial?",
+    "options": {
+      "A": "Dolor muscular crónico",
+      "B": "Zonas con alteración de la sensibilidad o circulación comprometida",
+      "C": "Contractura muscular subaguda",
+      "D": "Artritis reumatoide en fase crónica"
+    },
+    "correct": "B",
+    "explanation": "El calor superficial está contraindicado en zonas con alteración de la sensibilidad (anestesia) o circulación comprometida, ya que el paciente no puede detectar el calor excesivo y hay riesgo de quemadura tisular."
+  },
+  {
+    "id": 7,
+    "text": "La prueba de Lachman evalúa la integridad de:",
+    "options": {
+      "A": "El menisco medial de la rodilla",
+      "B": "El ligamento cruzado anterior (LCA) de la rodilla",
+      "C": "El ligamento lateral externo de la rodilla",
+      "D": "El tendón del cuádriceps"
+    },
+    "correct": "B",
+    "explanation": "La prueba de Lachman es la más sensible y específica para evaluar la rotura del ligamento cruzado anterior (LCA). Con la rodilla a 20-30° de flexión, se tracciona la tibia hacia anterior mientras se estabiliza el fémur."
+  },
+  {
+    "id": 8,
+    "text": "¿Qué es el Síndrome de Dolor Miofascial?",
+    "options": {
+      "A": "Una enfermedad autoinmune que afecta al tejido muscular",
+      "B": "Un trastorno doloroso caracterizado por la presencia de puntos gatillo miofasciales que generan dolor local y referido",
+      "C": "Una inflamación aguda de las fascias musculares",
+      "D": "Una neuropatía periférica crónica"
+    },
+    "correct": "B",
+    "explanation": "El Síndrome de Dolor Miofascial es un trastorno muscular caracterizado por puntos gatillo (trigger points) que son zonas hiperirritables dentro del músculo, que generan dolor local y dolor referido a zonas alejadas del punto de presión."
+  },
+  {
+    "id": 9,
+    "text": "En la marcha normal, la fase de apoyo representa aproximadamente:",
+    "options": {
+      "A": "30% del ciclo de marcha",
+      "B": "60% del ciclo de marcha",
+      "C": "80% del ciclo de marcha",
+      "D": "50% del ciclo de marcha"
+    },
+    "correct": "B",
+    "explanation": "En el ciclo de marcha normal, la fase de apoyo (contacto del pie con el suelo) representa aproximadamente el 60% del ciclo, y la fase de balanceo (pie sin contacto) el 40% restante."
+  },
+  {
+    "id": 10,
+    "text": "¿Cuál es la finalidad de la técnica de vendaje neuromuscular (kinesiotaping)?",
+    "options": {
+      "A": "Inmovilizar completamente la articulación afectada",
+      "B": "Proporcionar soporte muscular y articular manteniendo el movimiento, y facilitar la circulación linfática",
+      "C": "Comprimir la zona para reducir la inflamación aguda",
+      "D": "Sustituir a la cirugía en lesiones graves"
+    },
+    "correct": "B",
+    "explanation": "El kinesiotaping (vendaje neuromuscular) busca proporcionar soporte muscular y articular sin limitar el movimiento, estimular la propiocepción, mejorar la circulación linfática y reducir el dolor, permitiendo la actividad funcional."
+  },
+  {
+    "id": 11,
+    "text": "¿Cuál de los siguientes es un ejercicio isométrico?",
+    "options": {
+      "A": "Flexión de codo con mancuerna",
+      "B": "Empujar contra una pared sin mover la articulación",
+      "C": "Nadar estilo crol",
+      "D": "Subir escaleras"
+    },
+    "correct": "B",
+    "explanation": "Un ejercicio isométrico es aquel en que el músculo genera fuerza sin cambio en la longitud del músculo ni en el ángulo articular. Empujar contra una pared fija es el ejemplo más clásico."
+  },
+  {
+    "id": 12,
+    "text": "La escala de Berg evalúa:",
+    "options": {
+      "A": "La espasticidad en pacientes neurológicos",
+      "B": "El equilibrio funcional en personas mayores y pacientes neurológicos",
+      "C": "La fuerza muscular en miembros inferiores",
+      "D": "El rango de movimiento articular de la rodilla"
+    },
+    "correct": "B",
+    "explanation": "La Escala de Equilibrio de Berg evalúa el equilibrio funcional a través de 14 tareas de dificultad creciente. Es ampliamente utilizada en personas mayores y en la evaluación del riesgo de caídas."
+  },
+  {
+    "id": 13,
+    "text": "¿Cuál es el objetivo principal de la fisioterapia respiratoria en pacientes con EPOC?",
+    "options": {
+      "A": "Curar definitivamente la enfermedad pulmonar",
+      "B": "Mejorar la movilización y eliminación de secreciones, reducir el atrapamiento aéreo y mejorar la tolerancia al ejercicio",
+      "C": "Sustituir el tratamiento farmacológico",
+      "D": "Aumentar la capacidad pulmonar total"
+    },
+    "correct": "B",
+    "explanation": "En la EPOC, la fisioterapia respiratoria busca mejorar la ventilación, facilitar la eliminación de secreciones (técnicas de higiene bronquial), reducir el atrapamiento aéreo y mejorar la capacidad de ejercicio y la calidad de vida."
+  },
+  {
+    "id": 14,
+    "text": "¿Qué músculos forman el manguito rotador del hombro?",
+    "options": {
+      "A": "Deltoides, pectoral mayor, dorsal ancho, redondo mayor",
+      "B": "Supraespinoso, infraespinoso, redondo menor y subescapular",
+      "C": "Bíceps braquial, tríceps, coracobraquial y deltoides",
+      "D": "Trapecio, romboides, serrato anterior y elevador de la escápula"
+    },
+    "correct": "B",
+    "explanation": "El manguito rotador está formado por cuatro músculos: supraespinoso, infraespinoso, redondo menor (rotadores externos) y subescapular (rotador interno). Estos músculos estabilizan dinámicamente la cabeza humeral en la glenoides."
+  },
+  {
+    "id": 15,
+    "text": "En el tratamiento fisioterapéutico del ictus (ACV), la ventana de tiempo más favorable para iniciar la rehabilitación es:",
+    "options": {
+      "A": "6-12 meses después del ictus",
+      "B": "Lo más precozmente posible, tras la estabilización médica (primeras 24-48 horas)",
+      "C": "Solo cuando el paciente es independiente para las ABVD",
+      "D": "Exclusivamente en la fase crónica del ictus"
+    },
+    "correct": "B",
+    "explanation": "La evidencia científica muestra que el inicio precoz de la rehabilitación (en las primeras 24-48 horas tras la estabilización médica) aprovecha la neuroplasticidad máxima y mejora significativamente los resultados funcionales."
+  }
+]

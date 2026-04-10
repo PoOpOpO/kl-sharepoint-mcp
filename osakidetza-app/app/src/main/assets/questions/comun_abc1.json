@@ -1,0 +1,302 @@
+[
+  {
+    "id": 1,
+    "text": "¿Qué ley regula el Estatuto Básico del Empleado Público (EBEP) en España?",
+    "options": {
+      "A": "Ley 7/2007, de 12 de abril",
+      "B": "Real Decreto Legislativo 5/2015, de 30 de octubre",
+      "C": "Ley 30/1992, de 26 de noviembre",
+      "D": "Ley 39/2015, de 1 de octubre"
+    },
+    "correct": "B",
+    "explanation": "El EBEP está regulado por el Real Decreto Legislativo 5/2015, de 30 de octubre, por el que se aprueba el texto refundido de la Ley del Estatuto Básico del Empleado Público."
+  },
+  {
+    "id": 2,
+    "text": "Osakidetza – Servicio vasco de salud es una entidad de naturaleza:",
+    "options": {
+      "A": "Organismo autónomo de la Administración General del País Vasco",
+      "B": "Ente público de derecho privado",
+      "C": "Organismo público de derecho privado adscrito al Departamento de Salud",
+      "D": "Empresa pública del Gobierno Vasco"
+    },
+    "correct": "C",
+    "explanation": "Osakidetza es un organismo público de derecho privado adscrito al Departamento de Salud del Gobierno Vasco, creado por la Ley 8/1997, de 26 de junio, de Ordenación Sanitaria de Euskadi."
+  },
+  {
+    "id": 3,
+    "text": "Según el EBEP, ¿cuál de los siguientes principios NO corresponde a los principios éticos de los empleados públicos?",
+    "options": {
+      "A": "Objetividad",
+      "B": "Integridad",
+      "C": "Rentabilidad",
+      "D": "Transparencia"
+    },
+    "correct": "C",
+    "explanation": "Los principios éticos del EBEP incluyen objetividad, integridad, neutralidad, responsabilidad, imparcialidad, confidencialidad, dedicación al servicio público, transparencia, ejemplaridad, austeridad, accesibilidad, eficacia, honradez, y promoción del entorno cultural y medioambiental. La rentabilidad no es uno de ellos."
+  },
+  {
+    "id": 4,
+    "text": "La Ley Orgánica 3/2007, de 22 de marzo, para la igualdad efectiva de mujeres y hombres, ¿qué tipo de permiso introduce para los progenitores?",
+    "options": {
+      "A": "Permiso de maternidad de 20 semanas",
+      "B": "Permiso intransferible de paternidad",
+      "C": "Permiso parental compartible entre ambos progenitores",
+      "D": "Permiso de lactancia de 12 meses"
+    },
+    "correct": "B",
+    "explanation": "La LO 3/2007 introdujo el permiso de paternidad como permiso independiente e intransferible para los padres, aunque posteriormente fue ampliado y equiparado al de maternidad."
+  },
+  {
+    "id": 5,
+    "text": "El Reglamento General de Protección de Datos (RGPD) es de aplicación en la Unión Europea desde:",
+    "options": {
+      "A": "25 de mayo de 2016",
+      "B": "25 de mayo de 2018",
+      "C": "1 de enero de 2020",
+      "D": "14 de abril de 2019"
+    },
+    "correct": "B",
+    "explanation": "El RGPD (Reglamento UE 2016/679) entró en aplicación el 25 de mayo de 2018, aunque fue aprobado el 27 de abril de 2016."
+  },
+  {
+    "id": 6,
+    "text": "En relación con la prevención de riesgos laborales, la Ley 31/1995 establece que la evaluación de riesgos debe realizarse:",
+    "options": {
+      "A": "Solo cuando exista un accidente de trabajo",
+      "B": "Al inicio de la actividad y cuando se produzcan cambios relevantes",
+      "C": "Únicamente a solicitud de la Inspección de Trabajo",
+      "D": "Cada cinco años de forma obligatoria"
+    },
+    "correct": "B",
+    "explanation": "Según la Ley 31/1995, la evaluación de riesgos debe realizarse al inicio de la actividad y revisarse cuando se produzcan cambios en las condiciones de trabajo o cuando se hayan detectado daños para la salud."
+  },
+  {
+    "id": 7,
+    "text": "¿Cuál es el plazo máximo para resolver los procedimientos administrativos cuando la norma no establezca plazo específico, según la Ley 39/2015?",
+    "options": {
+      "A": "1 mes",
+      "B": "3 meses",
+      "C": "6 meses",
+      "D": "1 año"
+    },
+    "correct": "B",
+    "explanation": "El artículo 21 de la Ley 39/2015, de 1 de octubre, del Procedimiento Administrativo Común establece que el plazo máximo para resolver es de 3 meses cuando la norma no establezca un plazo específico."
+  },
+  {
+    "id": 8,
+    "text": "El Sistema Nacional de Salud (SNS) se rige principalmente por el principio de:",
+    "options": {
+      "A": "Privatización de servicios sanitarios",
+      "B": "Universalidad, equidad y solidaridad",
+      "C": "Copago obligatorio para todos los servicios",
+      "D": "Gestión exclusivamente autonómica sin coordinación estatal"
+    },
+    "correct": "B",
+    "explanation": "El SNS se rige por los principios de universalidad, equidad y solidaridad, garantizando el acceso a las prestaciones sanitarias en condiciones de igualdad efectiva, según la Ley 14/1986, General de Sanidad."
+  },
+  {
+    "id": 9,
+    "text": "Según el EBEP, las faltas muy graves prescriben a los:",
+    "options": {
+      "A": "2 años",
+      "B": "3 años",
+      "C": "5 años",
+      "D": "6 años"
+    },
+    "correct": "B",
+    "explanation": "Según el artículo 97 del EBEP (RDL 5/2015), las faltas muy graves prescriben a los 3 años, las graves a los 2 años, y las leves a los 6 meses."
+  },
+  {
+    "id": 10,
+    "text": "En la Comunidad Autónoma del País Vasco (CAPV), ¿qué órgano tiene competencia para la ordenación sanitaria según la Ley 8/1997?",
+    "options": {
+      "A": "El Parlamento Vasco",
+      "B": "El Departamento de Sanidad del Gobierno Vasco",
+      "C": "El Ministerio de Sanidad",
+      "D": "Las Juntas Generales de cada Territorio Histórico"
+    },
+    "correct": "B",
+    "explanation": "Según la Ley 8/1997 de Ordenación Sanitaria de Euskadi, el Departamento de Salud del Gobierno Vasco es el órgano competente en materia de ordenación sanitaria en la CAPV."
+  },
+  {
+    "id": 11,
+    "text": "El acoso laboral o 'mobbing' en el ámbito de la función pública puede ser sancionado como:",
+    "options": {
+      "A": "Falta leve",
+      "B": "Falta grave",
+      "C": "Falta muy grave",
+      "D": "No está tipificado como falta disciplinaria"
+    },
+    "correct": "C",
+    "explanation": "Según el EBEP, el acoso laboral está tipificado como falta muy grave, susceptible de ser sancionada con la separación del servicio."
+  },
+  {
+    "id": 12,
+    "text": "La Ley Orgánica 1/2004, de 28 de diciembre, de Medidas de Protección Integral contra la Violencia de Género, ¿sobre qué tipo de violencia se aplica?",
+    "options": {
+      "A": "Violencia ejercida por cualquier familiar",
+      "B": "Violencia que ejerce el hombre sobre la mujer en el ámbito de la pareja o expareja",
+      "C": "Violencia de género en el ámbito laboral",
+      "D": "Cualquier forma de violencia contra la mujer"
+    },
+    "correct": "B",
+    "explanation": "La LO 1/2004 se aplica específicamente a la violencia que, como manifestación de la discriminación, ejerce el hombre sobre la mujer en el ámbito de relaciones afectivas de pareja o expareja."
+  },
+  {
+    "id": 13,
+    "text": "Los funcionarios interinos son nombrados cuando:",
+    "options": {
+      "A": "Así lo decide el responsable del servicio",
+      "B": "Existen razones expresamente justificadas de necesidad y urgencia",
+      "C": "Hay plazas vacantes sin límite de tiempo",
+      "D": "Se necesita personal de refuerzo en cualquier circunstancia"
+    },
+    "correct": "B",
+    "explanation": "Según el EBEP, los funcionarios interinos son nombrados cuando existen razones expresamente justificadas de necesidad y urgencia y para el desempeño de funciones propias de funcionarios de carrera."
+  },
+  {
+    "id": 14,
+    "text": "En materia de transparencia, la Ley 19/2013, de 9 de diciembre, establece el derecho de acceso a la información pública. Dicho derecho puede ejercerse:",
+    "options": {
+      "A": "Solo por ciudadanos españoles",
+      "B": "Solo por personas con interés legítimo acreditado",
+      "C": "Por cualquier persona, sin necesidad de motivación",
+      "D": "Únicamente por funcionarios públicos"
+    },
+    "correct": "C",
+    "explanation": "La Ley 19/2013 de Transparencia establece que cualquier persona puede ejercer el derecho de acceso a la información pública sin necesidad de motivar su solicitud."
+  },
+  {
+    "id": 15,
+    "text": "El plazo de resolución de la situación de incapacidad temporal (IT) de un empleado público de Osakidetza puede prolongarse hasta un máximo de:",
+    "options": {
+      "A": "6 meses",
+      "B": "12 meses prorrogable hasta 18",
+      "C": "365 días prorrogable 180 días más",
+      "D": "24 meses"
+    },
+    "correct": "C",
+    "explanation": "La incapacidad temporal tiene una duración máxima de 365 días, prorrogable por otros 180 días cuando se presuma que durante ellos puede el trabajador ser dado de alta médica por curación."
+  },
+  {
+    "id": 16,
+    "text": "¿Qué organismo vela por la protección de datos personales en España a nivel nacional?",
+    "options": {
+      "A": "Tribunal Constitucional",
+      "B": "Agencia Española de Protección de Datos (AEPD)",
+      "C": "Defensor del Pueblo",
+      "D": "Consejo de Estado"
+    },
+    "correct": "B",
+    "explanation": "La Agencia Española de Protección de Datos (AEPD) es el organismo público independiente encargado de velar por el cumplimiento de la normativa de protección de datos en España."
+  },
+  {
+    "id": 17,
+    "text": "En el marco de la igualdad de género, ¿qué son los 'Planes de Igualdad' en las empresas?",
+    "options": {
+      "A": "Documentos voluntarios de buenas prácticas",
+      "B": "Conjuntos ordenados de medidas para alcanzar la igualdad de trato y oportunidades entre mujeres y hombres",
+      "C": "Convenios colectivos específicos para trabajadoras",
+      "D": "Protocolos exclusivos para casos de acoso sexual"
+    },
+    "correct": "B",
+    "explanation": "Los Planes de Igualdad son, según la Ley 3/2007, conjuntos ordenados de medidas adoptadas tras realizar un diagnóstico de situación, tendentes a alcanzar la igualdad de trato y oportunidades entre mujeres y hombres."
+  },
+  {
+    "id": 18,
+    "text": "Según el EBEP, la jornada ordinaria de trabajo de los empleados públicos tiene como límite:",
+    "options": {
+      "A": "35 horas semanales",
+      "B": "37,5 horas semanales",
+      "C": "40 horas semanales",
+      "D": "La establecida para los trabajadores del sector privado"
+    },
+    "correct": "C",
+    "explanation": "El EBEP establece que la jornada de trabajo de los funcionarios públicos será en cómputo anual la misma que se fije para los funcionarios de la Administración General del Estado, con el límite máximo de 40 horas semanales."
+  },
+  {
+    "id": 19,
+    "text": "La Ley de Ordenación Sanitaria de Euskadi (LOSA) fue aprobada en el año:",
+    "options": {
+      "A": "1986",
+      "B": "1990",
+      "C": "1997",
+      "D": "2002"
+    },
+    "correct": "C",
+    "explanation": "La Ley 8/1997, de 26 de junio, de Ordenación Sanitaria de Euskadi (LOSA) fue aprobada en 1997 y establece el marco organizativo del sistema sanitario vasco."
+  },
+  {
+    "id": 20,
+    "text": "¿Cuál de los siguientes derechos NO está incluido en la Carta de Derechos y Deberes de los Pacientes del Sistema Sanitario Vasco?",
+    "options": {
+      "A": "Derecho a la información sanitaria",
+      "B": "Derecho a la intimidad y confidencialidad",
+      "C": "Derecho a elegir libremente cualquier médico de cualquier comunidad autónoma",
+      "D": "Derecho al consentimiento informado"
+    },
+    "correct": "C",
+    "explanation": "Aunque existe libertad de elección de médico, el derecho a elegir libremente médico de cualquier comunidad autónoma sin restricciones no está garantizado de forma absoluta en el sistema sanitario vasco."
+  },
+  {
+    "id": 21,
+    "text": "En Osakidetza, las Organizaciones de Servicios son:",
+    "options": {
+      "A": "Los hospitales comarcales de la red",
+      "B": "Las unidades organizativas básicas con plena capacidad de gestión",
+      "C": "Los centros de salud de atención primaria",
+      "D": "Las unidades de coordinación interdepartamental"
+    },
+    "correct": "B",
+    "explanation": "Las Organizaciones de Servicios de Osakidetza son las unidades organizativas básicas con plena capacidad de gestión, responsables de la prestación de servicios sanitarios en su ámbito territorial."
+  },
+  {
+    "id": 22,
+    "text": "La Ley 39/2006, de 14 de diciembre, de Promoción de la Autonomía Personal y Atención a las Personas en Situación de Dependencia, crea el Sistema para la Autonomía y Atención a la Dependencia (SAAD). ¿Cuántos grados de dependencia establece?",
+    "options": {
+      "A": "2 grados",
+      "B": "3 grados",
+      "C": "4 grados",
+      "D": "5 grados"
+    },
+    "correct": "B",
+    "explanation": "La Ley 39/2006 establece 3 grados de dependencia: Grado I (dependencia moderada), Grado II (dependencia severa) y Grado III (gran dependencia)."
+  },
+  {
+    "id": 23,
+    "text": "En el ámbito de los riesgos psicosociales, ¿qué es el 'burnout' o síndrome de desgaste profesional?",
+    "options": {
+      "A": "Un tipo de accidente de trabajo",
+      "B": "Un estado de agotamiento físico, emocional y mental causado por el estrés laboral crónico",
+      "C": "Una enfermedad profesional reconocida por el sistema de Seguridad Social",
+      "D": "Un conflicto entre trabajadores de un mismo equipo"
+    },
+    "correct": "B",
+    "explanation": "El burnout o síndrome de desgaste profesional es un estado de agotamiento físico, emocional y mental resultado del estrés laboral crónico, caracterizado por agotamiento emocional, despersonalización y baja realización personal."
+  },
+  {
+    "id": 24,
+    "text": "El principio de presunción de inocencia en el procedimiento disciplinario implica que:",
+    "options": {
+      "A": "El empleado debe probar su inocencia",
+      "B": "La Administración debe probar la culpabilidad del empleado",
+      "C": "El expediente se archiva automáticamente",
+      "D": "No puede imponerse sanción cautelar"
+    },
+    "correct": "B",
+    "explanation": "El principio de presunción de inocencia implica que la Administración tiene la carga de probar la culpabilidad del empleado, sin que este deba demostrar su inocencia."
+  },
+  {
+    "id": 25,
+    "text": "La Ley 41/2002, de 14 de noviembre, básica reguladora de la autonomía del paciente, establece que el consentimiento informado debe ser:",
+    "options": {
+      "A": "Siempre verbal",
+      "B": "Siempre escrito",
+      "C": "Verbal por regla general, escrito en casos de riesgo grave",
+      "D": "Prestado únicamente por médicos especialistas"
+    },
+    "correct": "C",
+    "explanation": "La Ley 41/2002 establece que el consentimiento es verbal por regla general, pero debe obtenerse por escrito en los casos de intervención quirúrgica, procedimientos diagnósticos y terapéuticos invasores y en general cuando se apliquen procedimientos que suponen riesgos o inconvenientes de notoria y previsible repercusión."
+  }
+]

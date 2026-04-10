@@ -1,0 +1,182 @@
+[
+  {
+    "id": 1,
+    "text": "¿Cuál es la principal función del celador hospitalario?",
+    "options": {
+      "A": "Administrar medicamentos según prescripción",
+      "B": "Transporte y movilización de enfermos, vigilancia y mantenimiento del orden en el centro",
+      "C": "Realizar curas y vendajes básicos",
+      "D": "Gestionar las citas médicas de los pacientes"
+    },
+    "correct": "B",
+    "explanation": "El celador se encarga del transporte y movilización de enfermos, correspondencia, muestras y aparatos dentro del centro, así como de vigilar el cumplimiento de las normas del centro y mantener el orden."
+  },
+  {
+    "id": 2,
+    "text": "Al trasladar a un paciente encamado a una camilla, ¿cuántas personas son necesarias como mínimo para hacerlo correctamente?",
+    "options": {
+      "A": "1 persona",
+      "B": "2 personas",
+      "C": "3 personas",
+      "D": "4 personas"
+    },
+    "correct": "C",
+    "explanation": "Para el traslado correcto y seguro de un paciente encamado a una camilla se necesitan al menos 3 personas: una en la cabeza y hombros, otra en el tronco y otra en las piernas, para mantener la alineación y evitar lesiones."
+  },
+  {
+    "id": 3,
+    "text": "Cuando un celador traslada a un paciente en silla de ruedas por una rampa descendente, ¿cómo debe hacerlo?",
+    "options": {
+      "A": "De frente, mirando hacia donde baja",
+      "B": "De espaldas, empujando la silla para que el paciente vaya mirando hacia delante al bajar",
+      "C": "El paciente debe bajarse de la silla al bajar rampas",
+      "D": "Solo se puede bajar si hay ascensor disponible"
+    },
+    "correct": "B",
+    "explanation": "Al bajar una rampa con silla de ruedas, el celador debe ir de espaldas a la dirección de avance, de modo que el paciente desciende mirando hacia arriba. Esto permite un mayor control y seguridad."
+  },
+  {
+    "id": 4,
+    "text": "¿Cuál es la posición correcta del celador al empujar una camilla por los pasillos?",
+    "options": {
+      "A": "En los pies del paciente, empujando hacia la cabecera",
+      "B": "En la cabecera del paciente, empujando para que los pies vayan por delante",
+      "C": "En el lado derecho siempre",
+      "D": "No importa la posición si se puede controlar la camilla"
+    },
+    "correct": "A",
+    "explanation": "El celador debe situarse a los pies del paciente (cabecera de la camilla) para empujar, de forma que los pies del paciente vayan por delante y el celador pueda ver el camino. Así tiene mayor control y visibilidad."
+  },
+  {
+    "id": 5,
+    "text": "En caso de encontrar a un paciente caído en el suelo, ¿qué debe hacer primero el celador?",
+    "options": {
+      "A": "Levantarlo inmediatamente del suelo",
+      "B": "Avisar al personal sanitario antes de moverlo",
+      "C": "Trasladarlo a su cama sin esperar",
+      "D": "Administrar primeros auxilios básicos sin consultar"
+    },
+    "correct": "B",
+    "explanation": "El celador nunca debe mover a un paciente caído sin que el personal sanitario lo evalúe primero, para descartar lesiones que podrían agravarse con el movimiento. La primera acción es avisar al personal de enfermería o médico."
+  },
+  {
+    "id": 6,
+    "text": "¿Qué tipo de residuos son los que produce un paciente con dieta normal hospitalaria (restos de comida, papel, envases)?",
+    "options": {
+      "A": "Residuos del Grupo III (biosanitarios especiales)",
+      "B": "Residuos del Grupo I (asimilables a urbanos)",
+      "C": "Residuos del Grupo IV (citostáticos)",
+      "D": "Residuos radiactivos"
+    },
+    "correct": "B",
+    "explanation": "Los residuos de comida, envases, papel y similares son residuos del Grupo I, asimilables a residuos urbanos, que se gestionan como basura convencional."
+  },
+  {
+    "id": 7,
+    "text": "Al limpiar y preparar la habitación de un paciente dado de alta con enfermedad infecciosa, el celador debe:",
+    "options": {
+      "A": "Retirar la ropa de cama con las manos sin protección",
+      "B": "Usar guantes y mascarilla, retirar la ropa sin sacudir y depositar en bolsa cerrada",
+      "C": "Sacudir enérgicamente la ropa para airearla",
+      "D": "Dejar la ropa en la habitación para que se ventile"
+    },
+    "correct": "B",
+    "explanation": "Ante un paciente con enfermedad infecciosa, el celador debe utilizar EPIs (guantes, mascarilla), retirar la ropa de cama sin sacudir (para evitar aerosoles) y depositarla en bolsa cerrada para evitar la diseminación de gérmenes."
+  },
+  {
+    "id": 8,
+    "text": "¿Qué significa la señal de peligro biológico (biopeligro) en un centro sanitario?",
+    "options": {
+      "A": "Zona de radiaciones ionizantes",
+      "B": "Presencia de materiales infecciosos o que pueden causar enfermedades",
+      "C": "Área de alta tensión eléctrica",
+      "D": "Zona de productos químicos corrosivos"
+    },
+    "correct": "B",
+    "explanation": "El símbolo de biopeligro o peligro biológico indica la presencia de materiales biológicos potencialmente infecciosos (virus, bacterias, cultivos, sangre) que pueden causar enfermedades."
+  },
+  {
+    "id": 9,
+    "text": "Cuando el celador transporta documentación o muestras biológicas entre servicios, debe:",
+    "options": {
+      "A": "Leer el contenido de los documentos para asegurarse de que son correctos",
+      "B": "Guardar la confidencialidad de la información y transportar las muestras en recipientes adecuados",
+      "C": "Comentar el estado del paciente con otros trabajadores por el camino",
+      "D": "Dejar la documentación en recepción para que la recoja otro trabajador"
+    },
+    "correct": "B",
+    "explanation": "El celador debe guardar la confidencialidad de toda la información médica que maneja, transportar los documentos en sobres cerrados y las muestras en recipientes adecuados sellados."
+  },
+  {
+    "id": 10,
+    "text": "¿Cuál es la respuesta correcta del celador si un visitante le pregunta sobre el estado de salud de un paciente?",
+    "options": {
+      "A": "Informar de todo lo que sabe sobre el paciente",
+      "B": "Redirigir al visitante hacia el médico o el personal de enfermería responsable",
+      "C": "Inventar una respuesta para no preocupar al familiar",
+      "D": "Buscar la historia clínica del paciente para dar una respuesta exacta"
+    },
+    "correct": "B",
+    "explanation": "El celador no debe proporcionar información médica sobre pacientes, ya que no es su competencia y vulneraría la confidencialidad. Debe orientar al visitante hacia el personal sanitario responsable."
+  },
+  {
+    "id": 11,
+    "text": "Al movilizar a un paciente en cama, el celador debe proteger principalmente:",
+    "options": {
+      "A": "Solo los pies del paciente",
+      "B": "La columna vertebral propia (espalda recta, rodillas flexionadas) y la integridad del paciente",
+      "C": "Únicamente las manos del paciente",
+      "D": "No es necesaria ninguna técnica especial"
+    },
+    "correct": "B",
+    "explanation": "Al movilizar pacientes, el celador debe aplicar mecánica corporal correcta (espalda recta, rodillas flexionadas, pies separados) para proteger su propia columna, y también garantizar la seguridad e integridad del paciente."
+  },
+  {
+    "id": 12,
+    "text": "¿Qué debe hacer el celador si observa a un paciente con síntomas de malestar en un área de espera?",
+    "options": {
+      "A": "Administrar agua y esperar a que mejore",
+      "B": "Avisar inmediatamente al personal sanitario y no dejar solo al paciente",
+      "C": "Llamar a un familiar del paciente",
+      "D": "Acostar al paciente en el suelo y esperar"
+    },
+    "correct": "B",
+    "explanation": "El celador debe avisar inmediatamente al personal sanitario (enfermero, médico) cuando observa a un paciente con síntomas de malestar, manteniéndose cerca del paciente para vigilarlo hasta que llegue el personal cualificado."
+  },
+  {
+    "id": 13,
+    "text": "La técnica de 'grúa' o 'elevador' de pacientes en el ámbito hospitalario se utiliza para:",
+    "options": {
+      "A": "Elevar la cama del paciente",
+      "B": "Movilizar de forma segura a pacientes con escasa o nula capacidad de movimiento",
+      "C": "Transportar ropa sucia a lavandería",
+      "D": "Realizar radiografías portátiles"
+    },
+    "correct": "B",
+    "explanation": "Los elevadores o grúas de transferencia de pacientes permiten movilizar de forma segura a pacientes con escasa o nula colaboración, reduciendo el esfuerzo del personal y el riesgo de caídas y lesiones."
+  },
+  {
+    "id": 14,
+    "text": "En caso de incendio en el hospital, el acrónimo RACE indica el orden de actuación. ¿Qué significa?",
+    "options": {
+      "A": "Rescatar, Alertar, Contener, Evacuar",
+      "B": "Reducir, Apagar, Comunicar, Escapar",
+      "C": "Rescatar, Avisar, Combatir, Extinguir",
+      "D": "Revisar, Alertar, Controlar, Evacuar"
+    },
+    "correct": "A",
+    "explanation": "El protocolo RACE ante incendios significa: Rescatar (a personas en peligro inmediato), Alertar (activar la alarma), Contener (cerrar puertas para limitar propagación) y Evacuar (desalojar el área)."
+  },
+  {
+    "id": 15,
+    "text": "¿Cuál es la conducta correcta del celador ante un paciente agresivo verbalmente?",
+    "options": {
+      "A": "Responder con agresividad para imponerse",
+      "B": "Mantener la calma, hablar en tono sereno y solicitar apoyo del personal especializado",
+      "C": "Ignorar completamente al paciente",
+      "D": "Inmovilizarlo físicamente inmediatamente"
+    },
+    "correct": "B",
+    "explanation": "Ante un paciente agresivo verbalmente, el celador debe mantener la calma, hablar en tono calmado y no confrontacional, mantener distancia de seguridad y solicitar apoyo del personal especializado o de seguridad."
+  }
+]

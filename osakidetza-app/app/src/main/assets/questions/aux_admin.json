@@ -1,0 +1,182 @@
+[
+  {
+    "id": 1,
+    "text": "¿Qué es la historia clínica del paciente?",
+    "options": {
+      "A": "Un registro exclusivamente de las recetas médicas emitidas",
+      "B": "El conjunto de documentos que contiene los datos, valoraciones e informaciones de cualquier índole sobre la situación y la evolución clínica de un paciente",
+      "C": "Un documento de facturación de servicios sanitarios",
+      "D": "El registro de citas médicas del paciente"
+    },
+    "correct": "B",
+    "explanation": "Según la Ley 41/2002, la historia clínica es el conjunto de documentos que contiene los datos, valoraciones e informaciones de cualquier índole sobre la situación y la evolución clínica de un paciente a lo largo del proceso asistencial."
+  },
+  {
+    "id": 2,
+    "text": "La cita previa telefónica en un centro de salud debe gestionarse con:",
+    "options": {
+      "A": "Rapidez sin importar la información recogida",
+      "B": "Amabilidad, confidencialidad y recogiendo los datos necesarios según protocolo",
+      "C": "Instruyendo al paciente sobre su diagnóstico",
+      "D": "Derivando siempre al médico de guardia"
+    },
+    "correct": "B",
+    "explanation": "La gestión de citas telefónicas debe realizarse con amabilidad, respetando la confidencialidad de los datos del paciente, y recogiendo la información necesaria (nombre, TIS, motivo de consulta) según el protocolo del centro."
+  },
+  {
+    "id": 3,
+    "text": "¿Qué es la Tarjeta Individual Sanitaria (TIS) en el sistema sanitario vasco?",
+    "options": {
+      "A": "Una tarjeta de crédito para pagar servicios sanitarios",
+      "B": "El documento de identificación del asegurado en el sistema sanitario, con código de barras e información del paciente",
+      "C": "Una tarjeta de acceso a medicamentos de dispensación hospitalaria",
+      "D": "El carné de identidad del personal sanitario"
+    },
+    "correct": "B",
+    "explanation": "La Tarjeta Individual Sanitaria (TIS) es el documento que identifica a cada persona en el sistema sanitario de Osakidetza, incluyendo sus datos personales y un código de identificación único."
+  },
+  {
+    "id": 4,
+    "text": "En la gestión de documentación clínica, el plazo mínimo de conservación de la historia clínica es:",
+    "options": {
+      "A": "5 años",
+      "B": "10 años desde la última asistencia",
+      "C": "20 años",
+      "D": "Hasta el fallecimiento del paciente"
+    },
+    "correct": "B",
+    "explanation": "Según la Ley 41/2002, los centros sanitarios tienen la obligación de conservar la documentación clínica en condiciones que garanticen su correcto mantenimiento y seguridad, durante al menos 5 años desde la última asistencia (aunque algunas CC.AA. amplían este plazo a 10 años)."
+  },
+  {
+    "id": 5,
+    "text": "¿Cuál es la aplicación informática utilizada en Osakidetza para la gestión de pacientes en atención primaria?",
+    "options": {
+      "A": "SAP",
+      "B": "Osabide Global",
+      "C": "Microsoft Word",
+      "D": "Oracle Clinic"
+    },
+    "correct": "B",
+    "explanation": "Osabide Global es la historia clínica electrónica y sistema de información integrado utilizado en Osakidetza que permite la gestión de pacientes tanto en atención primaria como hospitalaria."
+  },
+  {
+    "id": 6,
+    "text": "¿Qué significa el acrónimo CIE-10 en el contexto sanitario?",
+    "options": {
+      "A": "Centro Internacional de Epidemiología, décima edición",
+      "B": "Clasificación Internacional de Enfermedades, décima revisión",
+      "C": "Código de Identificación de Especialidades, décimo grupo",
+      "D": "Convenio Internacional de Enfermedades, normativa 10"
+    },
+    "correct": "B",
+    "explanation": "CIE-10 es la Clasificación Internacional de Enfermedades en su décima revisión, elaborada por la OMS, utilizada para el codificado diagnóstico en las historias clínicas y para estadísticas sanitarias."
+  },
+  {
+    "id": 7,
+    "text": "En la recepción de un centro de salud, un paciente solicita información sobre el estado de salud de otro paciente. ¿Cómo debe actuar el auxiliar administrativo?",
+    "options": {
+      "A": "Proporcionar la información solicitada para ayudar",
+      "B": "Declinar proporcionar información médica y derivar al médico responsable",
+      "C": "Buscar la historia clínica y leerla al solicitante",
+      "D": "Dar información general sobre los síntomas de posibles enfermedades"
+    },
+    "correct": "B",
+    "explanation": "El auxiliar administrativo debe negarse a facilitar información clínica de pacientes a terceros, ya que ello vulneraría el secreto médico y la normativa de protección de datos. Solo el médico o el propio paciente pueden acceder a esa información."
+  },
+  {
+    "id": 8,
+    "text": "¿Cuál de las siguientes situaciones requiere consentimiento expreso del paciente para acceder a su historia clínica?",
+    "options": {
+      "A": "Acceso por el propio paciente",
+      "B": "Acceso por el médico responsable de su asistencia",
+      "C": "Acceso por un familiar sin delegación del paciente para fines distintos a la asistencia",
+      "D": "Acceso en caso de urgencia vital"
+    },
+    "correct": "C",
+    "explanation": "El acceso a la historia clínica por un familiar sin delegación del paciente y para fines distintos a la asistencia directa requiere el consentimiento expreso del propio paciente, salvo excepciones legales."
+  },
+  {
+    "id": 9,
+    "text": "En la codificación de la correspondencia oficial en un hospital, las siglas 'Ref:' significan:",
+    "options": {
+      "A": "Referencia al expediente o documento precedente al que se contesta",
+      "B": "Referencia del hospital remitente",
+      "C": "Referencia del médico firmante",
+      "D": "Número de registro de salida"
+    },
+    "correct": "A",
+    "explanation": "En la correspondencia oficial, 'Ref:' indica la referencia al documento o expediente anterior al que se está respondiendo, facilitando la localización y seguimiento de la comunicación."
+  },
+  {
+    "id": 10,
+    "text": "¿Cuál es el tipo de clasificación de archivos más utilizado para la documentación sanitaria por apellidos?",
+    "options": {
+      "A": "Clasificación numérica",
+      "B": "Clasificación cronológica",
+      "C": "Clasificación alfabética",
+      "D": "Clasificación geográfica"
+    },
+    "correct": "C",
+    "explanation": "La clasificación alfabética es el método más utilizado para ordenar documentos por nombre/apellidos de pacientes, siendo intuitivo y fácil de usar sin necesidad de índices auxiliares."
+  },
+  {
+    "id": 11,
+    "text": "¿Qué tipo de documento es el volante de derivación?",
+    "options": {
+      "A": "Un impreso de baja laboral",
+      "B": "Un documento que emite el médico para enviar al paciente a otro especialista o servicio",
+      "C": "Un impreso de prescripción de medicamentos",
+      "D": "Un documento de ingreso hospitalario"
+    },
+    "correct": "B",
+    "explanation": "El volante de derivación es un documento médico que autoriza y facilita la derivación del paciente desde atención primaria a atención especializada u otro servicio, indicando el motivo y los datos del paciente."
+  },
+  {
+    "id": 12,
+    "text": "En la gestión de correo electrónico institucional, ¿cuál es la práctica correcta?",
+    "options": {
+      "A": "Abrir todos los adjuntos de correos desconocidos para verificar su contenido",
+      "B": "Usar el correo institucional solo para asuntos profesionales, sin reenviar información sensible sin cifrado",
+      "C": "Compartir la contraseña de acceso con compañeros para facilitar el trabajo",
+      "D": "Usar el mismo correo institucional para asuntos personales y profesionales"
+    },
+    "correct": "B",
+    "explanation": "El correo institucional debe usarse exclusivamente para asuntos profesionales, manteniendo la confidencialidad y sin compartir información sensible sin medidas de seguridad adecuadas (cifrado, etc.)."
+  },
+  {
+    "id": 13,
+    "text": "¿Qué se entiende por 'acreditación' de un centro sanitario?",
+    "options": {
+      "A": "El proceso de apertura de un centro sanitario nuevo",
+      "B": "El reconocimiento formal de que un centro cumple estándares de calidad y seguridad establecidos",
+      "C": "La contratación de nuevos profesionales",
+      "D": "La expansión de las instalaciones del centro"
+    },
+    "correct": "B",
+    "explanation": "La acreditación es el proceso mediante el cual un organismo evaluador certifica que un centro sanitario cumple determinados estándares de calidad, seguridad y buenas prácticas asistenciales."
+  },
+  {
+    "id": 14,
+    "text": "En Osakidetza, el programa de Atención a la Cronicidad se denomina:",
+    "options": {
+      "A": "Proyecto Alma",
+      "B": "Estrategia de Atención al Paciente Crónico en Euskadi",
+      "C": "Plan Vasca de Cronicidad",
+      "D": "Programa OSI (Organización Sanitaria Integrada)"
+    },
+    "correct": "B",
+    "explanation": "La Estrategia de Atención al Paciente Crónico en Euskadi (2012) establece el marco para la atención integrada y centrada en el paciente crónico complejo en el sistema sanitario vasco."
+  },
+  {
+    "id": 15,
+    "text": "¿Cuál es la función del Registro de Voluntades Anticipadas en la CAPV?",
+    "options": {
+      "A": "Registro de donantes de órganos",
+      "B": "Registro donde se depositan los documentos de voluntades anticipadas para que sean accesibles cuando el paciente no pueda expresarse",
+      "C": "Lista de espera para trasplantes",
+      "D": "Base de datos de medicamentos autorizados"
+    },
+    "correct": "B",
+    "explanation": "El Registro Vasco de Voluntades Anticipadas custodia los documentos de voluntades anticipadas (testamentos vitales) para garantizar que puedan ser consultados por los profesionales sanitarios cuando el paciente no pueda expresar su voluntad."
+  }
+]

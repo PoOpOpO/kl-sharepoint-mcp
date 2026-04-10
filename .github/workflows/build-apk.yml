@@ -1,0 +1,135 @@
+name: Build Osakidetza OPE APK
+
+on:
+  push:
+    branches:
+      - claude/osakidetza-exam-app-AL4mi
+      - main
+    paths:
+      - 'osakidetza-app/**'
+  pull_request:
+    branches:
+      - main
+    paths:
+      - 'osakidetza-app/**'
+  workflow_dispatch:
+
+jobs:
+  build:
+    name: Build Debug & Release APK
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Set up JDK 17
+        uses: actions/setup-java@v4
+        with:
+          java-version: '17'
+          distribution: 'temurin'
+          cache: gradle
+
+      - name: Set up Android SDK
+        uses: android-actions/setup-android@v3
+
+      - name: Grant execute permission for gradlew
+        run: chmod +x osakidetza-app/gradlew
+        working-directory: .
+
+      - name: Download Gradle wrapper
+        run: |
+          cd osakidetza-app
+          gradle wrapper --gradle-version 8.9
+
+      - name: Cache Gradle packages
+        uses: actions/cache@v4
+        with:
+          path: |
+            ~/.gradle/caches
+            ~/.gradle/wrapper
+          key: ${{ runner.os }}-gradle-${{ hashFiles('osakidetza-app/**/*.gradle*', 'osakidetza-app/**/gradle-wrapper.properties') }}
+          restore-keys: |
+            ${{ runner.os }}-gradle-
+
+      - name: Build Debug APK
+        run: ./gradlew assembleDebug --stacktrace
+        working-directory: osakidetza-app
+
+      - name: Build Release APK
+        run: ./gradlew assembleRelease --stacktrace
+        working-directory: osakidetza-app
+
+      - name: Upload Debug APK
+        uses: actions/upload-artifact@v4
+        with:
+          name: osakidetza-ope-debug-apk
+          path: osakidetza-app/app/build/outputs/apk/debug/app-debug.apk
+          retention-days: 30
+
+      - name: Upload Release APK
+        uses: actions/upload-artifact@v4
+        with:
+          name: osakidetza-ope-release-apk
+          path: osakidetza-app/app/build/outputs/apk/release/app-release.apk
+          retention-days: 90
+
+      - name: Get APK info
+        run: |
+          echo "=== Debug APK ==="
+          ls -la osakidetza-app/app/build/outputs/apk/debug/ || true
+          echo "=== Release APK ==="
+          ls -la osakidetza-app/app/build/outputs/apk/release/ || true
+
+  create-release:
+    name: Create GitHub Release
+    needs: build
+    runs-on: ubuntu-latest
+    if: github.ref == 'refs/heads/main' && github.event_name == 'push'
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Download Release APK
+        uses: actions/download-artifact@v4
+        with:
+          name: osakidetza-ope-release-apk
+          path: ./artifacts
+
+      - name: Create Release
+        uses: softprops/action-gh-release@v2
+        with:
+          tag_name: v${{ github.run_number }}
+          name: "Osakidetza OPE v${{ github.run_number }}"
+          body: |
+            ## Osakidetza OPE - App de preparación de oposiciones
+
+            ### Características
+            - Preguntas de múltiple elección para todas las categorías de la OPE 2023-2024-2025
+            - Modo Estudio: ver respuesta correcta inmediatamente
+            - Modo Examen: simulación con tiempo límite y resultados al final
+            - Seguimiento de estadísticas por categoría
+            - Marcador de preguntas favoritas
+
+            ### Categorías incluidas
+            - Común A, B y C1
+            - Común C2, C3, D y E
+            - Enfermero/a
+            - TCAE / Auxiliar de Enfermería
+            - Celador/a
+            - Auxiliar Administrativo/a
+            - Administrativo/a
+            - Técnico Especialista Laboratorio
+            - Fisioterapeuta
+            - Técnico/a Superior Administración
+
+            ### Instalación
+            Descarga el APK y activa la instalación desde fuentes desconocidas en tu Android.
+
+            Basado en las baterías de preguntas publicadas en https://euskadi.ugt-sp.es/ope-osakidetza-7/
+          files: ./artifacts/app-release.apk
+          draft: false
+          prerelease: false
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}

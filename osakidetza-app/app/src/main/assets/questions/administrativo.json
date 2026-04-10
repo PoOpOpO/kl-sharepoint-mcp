@@ -1,0 +1,182 @@
+[
+  {
+    "id": 1,
+    "text": "¿Cuáles son los recursos administrativos ordinarios previstos en la Ley 39/2015?",
+    "options": {
+      "A": "Recurso de alzada y recurso potestativo de reposición",
+      "B": "Recurso contencioso-administrativo y recurso de apelación",
+      "C": "Recurso de casación y recurso de revisión",
+      "D": "Recurso de amparo y recurso de inconstitucionalidad"
+    },
+    "correct": "A",
+    "explanation": "La Ley 39/2015 regula el recurso de alzada (contra actos no definitivos que agotan la vía administrativa) y el recurso potestativo de reposición (contra actos que agotan la vía administrativa). También existe el recurso extraordinario de revisión."
+  },
+  {
+    "id": 2,
+    "text": "En los contratos públicos, ¿qué tipo de procedimiento de adjudicación es obligatorio para contratos superiores al umbral comunitario?",
+    "options": {
+      "A": "Procedimiento negociado sin publicidad",
+      "B": "Procedimiento abierto con publicación en el DOUE",
+      "C": "Licitación directa entre empresas invitadas",
+      "D": "Contrato menor sin publicación"
+    },
+    "correct": "B",
+    "explanation": "Para contratos que superen los umbrales comunitarios establecidos en la Ley 9/2017 de Contratos del Sector Público (LCSP), es obligatorio el procedimiento abierto con publicación en el Diario Oficial de la Unión Europea (DOUE)."
+  },
+  {
+    "id": 3,
+    "text": "¿Qué es el Presupuesto General de la Administración y cuándo debe aprobarse?",
+    "options": {
+      "A": "Es el plan de gastos e ingresos que debe aprobarse antes del 31 de octubre del año anterior",
+      "B": "Es la cuenta anual de resultados, aprobada en febrero del año siguiente",
+      "C": "Es el inventario de bienes públicos, aprobado cada 4 años",
+      "D": "Es el plan de inversiones, aprobado en cualquier momento del año"
+    },
+    "correct": "A",
+    "explanation": "El Presupuesto General es el documento que refleja las previsiones de ingresos y gastos públicos para el año siguiente. Debe presentarse a las Cortes Generales antes del 1 de octubre y aprobarse antes del ejercicio al que se refiere."
+  },
+  {
+    "id": 4,
+    "text": "¿Cuáles son los principios básicos de la contratación pública según la LCSP?",
+    "options": {
+      "A": "Libertad, igualdad y fraternidad",
+      "B": "Publicidad, concurrencia, transparencia, confidencialidad, igualdad y no discriminación",
+      "C": "Economía, eficacia y eficiencia únicamente",
+      "D": "Principio de oportunidad y principio de conveniencia"
+    },
+    "correct": "B",
+    "explanation": "Según la Ley 9/2017 de Contratos del Sector Público (LCSP), los principios de la contratación pública son: libertad de acceso, publicidad, transparencia, no discriminación e igualdad de trato, así como la eficiencia en el uso de fondos públicos."
+  },
+  {
+    "id": 5,
+    "text": "La Ley 40/2015, de 1 de octubre, de Régimen Jurídico del Sector Público regula:",
+    "options": {
+      "A": "El procedimiento administrativo común",
+      "B": "Las relaciones entre las distintas Administraciones Públicas y el régimen jurídico interno de cada Administración",
+      "C": "El estatuto de los empleados públicos",
+      "D": "Los contratos del sector público"
+    },
+    "correct": "B",
+    "explanation": "La Ley 40/2015 regula el régimen jurídico de las Administraciones Públicas, incluyendo los principios de funcionamiento, las relaciones interadministrativas y la organización del sector público institucional."
+  },
+  {
+    "id": 6,
+    "text": "¿Qué es la firma electrónica avanzada?",
+    "options": {
+      "A": "La misma que la firma manuscrita digitalizada",
+      "B": "Una firma electrónica que permite identificar al firmante y detectar cualquier cambio posterior en los datos",
+      "C": "Una firma simple basada en usuario y contraseña",
+      "D": "Una firma válida solo para documentos internos de la administración"
+    },
+    "correct": "B",
+    "explanation": "La firma electrónica avanzada, según el Reglamento eIDAS, es la que está vinculada de manera única a su firmante, permite su identificación y detecta cualquier cambio posterior en los datos firmados."
+  },
+  {
+    "id": 7,
+    "text": "En el ámbito de la administración electrónica, el Punto de Acceso General (PAG) en España es:",
+    "options": {
+      "A": "Una plataforma de acceso a todos los servicios de la Administración General del Estado",
+      "B": "Un sistema exclusivo para acceder a servicios de empleo público",
+      "C": "El portal de transparencia del Gobierno",
+      "D": "El sistema de registro electrónico de contratos públicos"
+    },
+    "correct": "A",
+    "explanation": "El Punto de Acceso General (administracion.gob.es) es la plataforma web que proporciona acceso unificado a todos los servicios, trámites e información de la Administración General del Estado."
+  },
+  {
+    "id": 8,
+    "text": "¿Cuándo se considera que un acto administrativo es nulo de pleno derecho?",
+    "options": {
+      "A": "Cuando tiene un defecto menor de forma",
+      "B": "Cuando lesiona derechos fundamentales o es dictado por órgano incompetente, entre otras causas tasadas",
+      "C": "Cuando el administrado no lo impugna en el plazo establecido",
+      "D": "Cuando contiene errores materiales"
+    },
+    "correct": "B",
+    "explanation": "Según el artículo 47 de la Ley 39/2015, son nulos de pleno derecho los actos que lesionen derechos fundamentales, los dictados por órgano manifiestamente incompetente, los de contenido imposible, los constitutivos de infracción penal, entre otras causas."
+  },
+  {
+    "id": 9,
+    "text": "¿Qué es el silencio administrativo positivo?",
+    "options": {
+      "A": "La denegación tácita de una solicitud por inactividad de la Administración",
+      "B": "La estimación tácita de una solicitud cuando la Administración no resuelve en el plazo establecido",
+      "C": "La paralización de un procedimiento por acuerdo de las partes",
+      "D": "La suspensión de los plazos administrativos por causas de fuerza mayor"
+    },
+    "correct": "B",
+    "explanation": "El silencio administrativo positivo significa que, transcurrido el plazo de resolución sin que la Administración haya resuelto, la solicitud se entiende estimada. Se aplica en la mayoría de los procedimientos iniciados a solicitud del interesado."
+  },
+  {
+    "id": 10,
+    "text": "En relación con la protección de datos en la Administración Pública, ¿quién debe ser designado como Delegado de Protección de Datos (DPD)?",
+    "options": {
+      "A": "El Secretario General de cada organismo",
+      "B": "Una persona con conocimientos especializados en Derecho y práctica de protección de datos",
+      "C": "El responsable de informática del organismo",
+      "D": "El Director General del organismo"
+    },
+    "correct": "B",
+    "explanation": "El RGPD exige que el Delegado de Protección de Datos (DPD/DPO) sea designado en base a sus cualidades profesionales y, en particular, a sus conocimientos especializados del Derecho y la práctica de la protección de datos."
+  },
+  {
+    "id": 11,
+    "text": "¿Qué es el control interno de la gestión económico-financiera en las Administraciones Públicas?",
+    "options": {
+      "A": "La fiscalización realizada por el Tribunal de Cuentas",
+      "B": "La función realizada por la Intervención General para verificar la legalidad y regularidad de las operaciones",
+      "C": "El control político ejercido por el Parlamento",
+      "D": "La auditoría realizada por empresas privadas"
+    },
+    "correct": "B",
+    "explanation": "El control interno de la gestión económico-financiera en la Administración Pública es ejercido por la Intervención General, que verifica que las operaciones se ajustan a la legalidad y al principio de buena gestión financiera."
+  },
+  {
+    "id": 12,
+    "text": "La clasificación de los puestos de trabajo en la Administración Pública se realiza a través de:",
+    "options": {
+      "A": "Convenios colectivos",
+      "B": "La Relación de Puestos de Trabajo (RPT)",
+      "C": "Contratos individuales de trabajo",
+      "D": "Resoluciones ministeriales anuales"
+    },
+    "correct": "B",
+    "explanation": "La Relación de Puestos de Trabajo (RPT) es el instrumento técnico a través del cual las Administraciones Públicas ordenan su personal, clasifican los puestos y establecen los requisitos para su desempeño."
+  },
+  {
+    "id": 13,
+    "text": "En hoja de cálculo (Excel/Calc), ¿qué función permite buscar un valor en una tabla y devolver el valor correspondiente de otra columna?",
+    "options": {
+      "A": "SUMA",
+      "B": "BUSCARV (o VLOOKUP)",
+      "C": "SI",
+      "D": "CONTAR"
+    },
+    "correct": "B",
+    "explanation": "La función BUSCARV (o VLOOKUP en inglés) permite buscar un valor en la primera columna de una tabla y devolver un valor de la misma fila en otra columna especificada."
+  },
+  {
+    "id": 14,
+    "text": "¿Cuál es el plazo para interponer un recurso de alzada en la Administración?",
+    "options": {
+      "A": "10 días hábiles",
+      "B": "1 mes si el acto es expreso, 3 meses si es presunto",
+      "C": "2 meses si el acto es expreso, 6 meses si es presunto",
+      "D": "15 días naturales"
+    },
+    "correct": "B",
+    "explanation": "Según el artículo 121 de la Ley 39/2015, el recurso de alzada debe interponerse en el plazo de 1 mes si el acto es expreso (notificado), o de 3 meses si se trata de un acto presunto (silencio administrativo)."
+  },
+  {
+    "id": 15,
+    "text": "En Osakidetza, ¿cuál es el principal sistema de información hospitalaria (HIS) para la gestión administrativa?",
+    "options": {
+      "A": "SAP R/3",
+      "B": "Gestión Hospitalaria Integrada de Osakidetza (Osabide, GHIO, OSANET según el nivel)",
+      "C": "Oracle E-Business Suite",
+      "D": "Microsoft Dynamics"
+    },
+    "correct": "B",
+    "explanation": "Osakidetza utiliza diferentes sistemas de información integrados según el nivel asistencial: Osabide Global como historia clínica unificada, y diferentes módulos de gestión administrativa integrados en su plataforma corporativa."
+  }
+]

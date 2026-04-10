@@ -1,0 +1,242 @@
+[
+  {
+    "id": 1,
+    "text": "¿Cuál es el valor normal de hemoglobina en hombres adultos?",
+    "options": {
+      "A": "10-12 g/dL",
+      "B": "13.5-17.5 g/dL",
+      "C": "20-25 g/dL",
+      "D": "7-9 g/dL"
+    },
+    "correct": "B",
+    "explanation": "El valor normal de hemoglobina en hombres adultos es de 13.5-17.5 g/dL. En mujeres el rango normal es de 12.0-16.0 g/dL. Por debajo de estos valores se habla de anemia."
+  },
+  {
+    "id": 2,
+    "text": "¿Cuál es el anticoagulante utilizado en los tubos de tapón morado o violeta para hemograma?",
+    "options": {
+      "A": "Citrato sódico",
+      "B": "Heparina de litio",
+      "C": "EDTA (ácido etilendiaminotetraacético)",
+      "D": "Fluoruro sódico"
+    },
+    "correct": "C",
+    "explanation": "El tubo con tapón morado/violeta contiene EDTA (K2-EDTA o K3-EDTA), que es el anticoagulante de elección para la realización del hemograma, ya que preserva la morfología celular."
+  },
+  {
+    "id": 3,
+    "text": "En la cadena de custodia de muestras biológicas, ¿cuál es el principio fundamental?",
+    "options": {
+      "A": "Procesar todas las muestras sin necesidad de identificación",
+      "B": "Garantizar la trazabilidad completa de la muestra desde su extracción hasta el informe",
+      "C": "Almacenar todas las muestras a temperatura ambiente",
+      "D": "Descartar las muestras que lleguen más de 30 minutos después de la extracción"
+    },
+    "correct": "B",
+    "explanation": "La cadena de custodia garantiza la trazabilidad completa de la muestra: quién la extrajo, cuándo, cómo fue transportada, quién la procesó, y en qué condiciones. Es fundamental para la validez del resultado."
+  },
+  {
+    "id": 4,
+    "text": "¿Qué es el tiempo de protrombina (TP) o INR?",
+    "options": {
+      "A": "Una medida de la función plaquetaria",
+      "B": "Un parámetro que evalúa la vía extrínseca de la coagulación y se usa para monitorizar anticoagulantes orales",
+      "C": "Una prueba de función hepática directa",
+      "D": "Un marcador de inflamación sistémica"
+    },
+    "correct": "B",
+    "explanation": "El TP/INR mide la eficacia de la vía extrínseca e intrínseca de la coagulación. Se usa principalmente para monitorizar el tratamiento anticoagulante con cumarínicos (acenocumarol, warfarina). INR normal: 0.8-1.2. Rango terapéutico: 2-3."
+  },
+  {
+    "id": 5,
+    "text": "La reacción en cadena de la polimerasa (PCR) en diagnóstico microbiológico permite:",
+    "options": {
+      "A": "Identificar bacterias por su morfología",
+      "B": "Amplificar y detectar secuencias específicas de ADN/ARN de microorganismos",
+      "C": "Medir la concentración de anticuerpos en sangre",
+      "D": "Cultivar virus en células"
+    },
+    "correct": "B",
+    "explanation": "La PCR (reacción en cadena de la polimerasa) es una técnica molecular que amplifica exponencialmente secuencias específicas de ADN o ARN, permitiendo detectar microorganismos aunque estén en cantidades mínimas en la muestra."
+  },
+  {
+    "id": 6,
+    "text": "¿Qué es el antibiograma?",
+    "options": {
+      "A": "Un análisis de sangre para detectar infecciones",
+      "B": "Una prueba que determina la sensibilidad o resistencia de una bacteria a diferentes antibióticos",
+      "C": "Un cultivo viral en células",
+      "D": "Un test de alergia a medicamentos"
+    },
+    "correct": "B",
+    "explanation": "El antibiograma es la prueba de laboratorio que determina in vitro la sensibilidad (S), resistencia (R) o sensibilidad intermedia (I) de una bacteria aislada frente a diferentes antibióticos, orientando el tratamiento."
+  },
+  {
+    "id": 7,
+    "text": "En el proceso de centrifugación de sangre total, el suero se obtiene:",
+    "options": {
+      "A": "Antes de la centrifugación, por decantación natural",
+      "B": "Del sobrenadante de un tubo sin anticoagulante tras la centrifugación y coagulación",
+      "C": "De la capa de células del fondo del tubo",
+      "D": "Del tubo con EDTA tras centrifugación"
+    },
+    "correct": "B",
+    "explanation": "El suero se obtiene del sobrenadante (parte líquida superior) de un tubo sin anticoagulante (o con activador de la coagulación) tras dejar coagular la muestra y centrifugarla. A diferencia del plasma, el suero no contiene factores de coagulación."
+  },
+  {
+    "id": 8,
+    "text": "¿Cuáles son los valores normales de glucosa en plasma en ayunas?",
+    "options": {
+      "A": "50-70 mg/dL",
+      "B": "70-100 mg/dL",
+      "C": "110-140 mg/dL",
+      "D": "140-200 mg/dL"
+    },
+    "correct": "B",
+    "explanation": "La glucosa plasmática en ayunas normal es de 70-100 mg/dL. Entre 100-125 mg/dL se habla de glucemia basal alterada. La diabetes se diagnostica con valores ≥126 mg/dL en dos determinaciones."
+  },
+  {
+    "id": 9,
+    "text": "La técnica ELISA se basa en:",
+    "options": {
+      "A": "La migración electroforética de proteínas",
+      "B": "La reacción antígeno-anticuerpo detectada mediante una enzima que genera una señal colorimétrica",
+      "C": "La amplificación de ADN por polimerización",
+      "D": "La separación de células por gradiente de densidad"
+    },
+    "correct": "B",
+    "explanation": "ELISA (Enzyme-Linked ImmunoSorbent Assay) es una técnica inmunoenzimática basada en la unión específica antígeno-anticuerpo. Un anticuerpo conjugado con una enzima genera una reacción colorimétrica detectable."
+  },
+  {
+    "id": 10,
+    "text": "¿Qué marcador bioquímico es específico de daño miocárdico y se usa en el diagnóstico de infarto agudo de miocardio?",
+    "options": {
+      "A": "AST (GOT)",
+      "B": "Troponina I o T",
+      "C": "Creatinina",
+      "D": "Amilasa"
+    },
+    "correct": "B",
+    "explanation": "Las troponinas cardíacas (troponina I y troponina T) son proteínas altamente específicas del músculo cardíaco. Su elevación en sangre indica daño miocárdico y son el marcador de elección para el diagnóstico del infarto agudo de miocardio (IAM)."
+  },
+  {
+    "id": 11,
+    "text": "En microbiología, ¿qué medio de cultivo se usa para aislar Salmonella y Shigella en muestras de heces?",
+    "options": {
+      "A": "Agar sangre",
+      "B": "Agar MacConkey",
+      "C": "Agar SS (Salmonella-Shigella) o agar Hektoen",
+      "D": "Agar Sabouraud"
+    },
+    "correct": "C",
+    "explanation": "Para el aislamiento de Salmonella y Shigella en muestras de heces se utilizan medios selectivos como el agar SS (Salmonella-Shigella), agar Hektoen o XLD, que inhiben el crecimiento de otras enterobacterias."
+  },
+  {
+    "id": 12,
+    "text": "¿Cuál es el nivel de bioseguridad (NBS) del laboratorio donde se trabaja con agentes de riesgo moderado para el individuo pero bajo para la comunidad, como E. coli patógena?",
+    "options": {
+      "A": "NBS 1",
+      "B": "NBS 2",
+      "C": "NBS 3",
+      "D": "NBS 4"
+    },
+    "correct": "B",
+    "explanation": "El Nivel de Bioseguridad 2 (NBS2) corresponde a laboratorios donde se manipulan agentes que presentan riesgo moderado para el personal pero bajo para la comunidad, como bacterias patógenas habituales (Salmonella, S. aureus, E. coli patógena)."
+  },
+  {
+    "id": 13,
+    "text": "¿Qué es el hematocrito?",
+    "options": {
+      "A": "El número de glóbulos blancos por microlitro de sangre",
+      "B": "La proporción del volumen de glóbulos rojos respecto al volumen total de sangre",
+      "C": "La concentración de hemoglobina en los glóbulos rojos",
+      "D": "El volumen medio de los glóbulos rojos"
+    },
+    "correct": "B",
+    "explanation": "El hematocrito es el porcentaje del volumen total de sangre que está ocupado por los eritrocitos (glóbulos rojos). Los valores normales son 41-53% en hombres y 36-46% en mujeres."
+  },
+  {
+    "id": 14,
+    "text": "La tinción de Gram se utiliza para:",
+    "options": {
+      "A": "Detectar hongos y levaduras",
+      "B": "Diferenciar bacterias en Gram positivas (azul/violeta) y Gram negativas (rosa/rojo)",
+      "C": "Identificar células cancerosas",
+      "D": "Teñir parásitos en heces"
+    },
+    "correct": "B",
+    "explanation": "La tinción de Gram diferencia bacterias en Gram positivas (retienen el cristal violeta, aparecen azul-violeta) y Gram negativas (se decoloran y toman la safranina, aparecen rosa-rojo), basándose en la estructura de su pared celular."
+  },
+  {
+    "id": 15,
+    "text": "¿Cuál es el valor normal del INR en un paciente no anticoagulado?",
+    "options": {
+      "A": "2.0-3.0",
+      "B": "0.8-1.2",
+      "C": "3.5-4.5",
+      "D": "0.5-0.8"
+    },
+    "correct": "B",
+    "explanation": "El INR normal en pacientes no anticoagulados es de 0.8-1.2. En pacientes con tratamiento anticoagulante oral (p.ej. para fibrilación auricular), el rango terapéutico es 2.0-3.0, y para prótesis mecánicas 2.5-3.5."
+  },
+  {
+    "id": 16,
+    "text": "¿Qué marcador se usa para el diagnóstico y seguimiento del cáncer de próstata?",
+    "options": {
+      "A": "CEA (antígeno carcinoembrionario)",
+      "B": "AFP (alfa-fetoproteína)",
+      "C": "PSA (antígeno prostático específico)",
+      "D": "CA 125"
+    },
+    "correct": "C",
+    "explanation": "El PSA (antígeno prostático específico) es el marcador tumoral más utilizado para el cribado y seguimiento del cáncer de próstata. Niveles elevados de PSA (>4 ng/mL) pueden indicar cáncer, hiperplasia benigna u otras patologías prostáticas."
+  },
+  {
+    "id": 17,
+    "text": "¿Qué significa 'VSG' en hematología?",
+    "options": {
+      "A": "Velocidad de Sedimentación Globular",
+      "B": "Volumen Sanguíneo Global",
+      "C": "Valor Sérico de Glucosa",
+      "D": "Valoración de Sangre Granulocítica"
+    },
+    "correct": "A",
+    "explanation": "VSG (Velocidad de Sedimentación Globular) es un parámetro que mide la velocidad con que los hematíes se depositan en el fondo de un tubo en 1 hora. Está elevada en procesos inflamatorios, infecciosos y autoinmunes."
+  },
+  {
+    "id": 18,
+    "text": "El agar de Sabouraud se utiliza en microbiología para:",
+    "options": {
+      "A": "Cultivar anaerobios estrictos",
+      "B": "Aislar hongos y levaduras",
+      "C": "Identificar bacterias Gram negativas",
+      "D": "Detectar enterobacterias productoras de lactasa"
+    },
+    "correct": "B",
+    "explanation": "El agar de Sabouraud es un medio de cultivo selectivo para hongos y levaduras. Su bajo pH (5.6) y la adición de antibióticos inhiben el crecimiento bacteriano y favorecen el crecimiento fúngico."
+  },
+  {
+    "id": 19,
+    "text": "¿Cuál es la función principal del control de calidad interno (CCI) en un laboratorio?",
+    "options": {
+      "A": "Evaluar la comparabilidad de resultados entre diferentes laboratorios",
+      "B": "Detectar errores analíticos aleatorios y sistemáticos en el proceso de análisis diario",
+      "C": "Auditar la gestión administrativa del laboratorio",
+      "D": "Verificar la formación del personal técnico"
+    },
+    "correct": "B",
+    "explanation": "El Control de Calidad Interno (CCI) se realiza diariamente mediante muestras de control con valores conocidos. Permite detectar errores aleatorios (imprecisión) y sistemáticos (sesgo) en el proceso analítico antes de reportar resultados."
+  },
+  {
+    "id": 20,
+    "text": "¿Qué es la hemólisis de una muestra y cómo afecta al análisis?",
+    "options": {
+      "A": "Es la coagulación de la sangre y no afecta a ningún parámetro",
+      "B": "Es la destrucción de los glóbulos rojos con liberación de hemoglobina, que puede interferir con múltiples determinaciones analíticas",
+      "C": "Es el proceso de separación de suero y plasma",
+      "D": "Es la contaminación bacteriana de la muestra"
+    },
+    "correct": "B",
+    "explanation": "La hemólisis es la destrucción de los eritrocitos con liberación de su contenido intracelular (hemoglobina, potasio, enzimas) al suero/plasma. Puede interferir con numerosas determinaciones (potasio, LDH, bilirrubina, enzimas hepáticas) dando resultados falsamente elevados."
+  }
+]

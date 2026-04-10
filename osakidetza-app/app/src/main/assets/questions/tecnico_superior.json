@@ -1,0 +1,182 @@
+[
+  {
+    "id": 1,
+    "text": "¿Cuál es la principal normativa que regula la contratación pública en España?",
+    "options": {
+      "A": "Real Decreto Legislativo 3/2011",
+      "B": "Ley 9/2017, de 8 de noviembre, de Contratos del Sector Público (LCSP)",
+      "C": "Ley 30/1992 de Régimen Jurídico",
+      "D": "Real Decreto 1098/2001"
+    },
+    "correct": "B",
+    "explanation": "La Ley 9/2017 de Contratos del Sector Público (LCSP) es la normativa vigente que regula la contratación pública en España, transponiendo las Directivas europeas 2014/23/UE y 2014/24/UE."
+  },
+  {
+    "id": 2,
+    "text": "En el marco de la gestión por procesos en organizaciones sanitarias, ¿qué es un proceso clave?",
+    "options": {
+      "A": "Un proceso exclusivamente administrativo",
+      "B": "Un proceso directamente relacionado con la misión de la organización y que tiene impacto directo en la satisfacción del cliente/paciente",
+      "C": "Un proceso de soporte para el funcionamiento interno",
+      "D": "Un proceso estratégico de toma de decisiones directivas"
+    },
+    "correct": "B",
+    "explanation": "Los procesos clave (u operativos) son los directamente relacionados con la misión de la organización sanitaria y tienen impacto directo en la satisfacción del paciente/usuario, como la atención clínica, el proceso diagnóstico-terapéutico, etc."
+  },
+  {
+    "id": 3,
+    "text": "El modelo EFQM de excelencia en la gestión organizacional se basa en:",
+    "options": {
+      "A": "Únicamente en los resultados económicos de la organización",
+      "B": "Un enfoque de autoevaluación que examina agentes facilitadores y resultados de la organización",
+      "C": "La certificación ISO 9001 exclusivamente",
+      "D": "La gestión por departamentos independientes"
+    },
+    "correct": "B",
+    "explanation": "El modelo EFQM (European Foundation for Quality Management) es un marco de gestión de la excelencia basado en la autoevaluación que examina agentes facilitadores (liderazgo, estrategia, personas, alianzas, procesos) y resultados (clientes, personas, sociedad, negocio)."
+  },
+  {
+    "id": 4,
+    "text": "La Ley de Ordenación Sanitaria de Euskadi (LOSA) define las Organizaciones Sanitarias Integradas (OSI) como:",
+    "options": {
+      "A": "Hospitales de alta especialización",
+      "B": "Estructuras que integran la atención primaria y hospitalaria de un territorio bajo una gestión única",
+      "C": "Centros de salud mental especializados",
+      "D": "Redes privadas de atención sanitaria concertada"
+    },
+    "correct": "B",
+    "explanation": "Las Organizaciones Sanitarias Integradas (OSI) de Osakidetza son estructuras que integran bajo una gestión única los servicios de atención primaria y hospitalaria de un territorio, buscando la continuidad asistencial y la eficiencia."
+  },
+  {
+    "id": 5,
+    "text": "En gestión de recursos humanos, ¿qué es la evaluación del desempeño?",
+    "options": {
+      "A": "El proceso de selección de nuevo personal",
+      "B": "El proceso sistemático que mide el rendimiento y resultados de los empleados respecto a objetivos preestablecidos",
+      "C": "La gestión de las bajas laborales del personal",
+      "D": "El cálculo de la nómina mensual"
+    },
+    "correct": "B",
+    "explanation": "La evaluación del desempeño es un proceso sistemático y periódico que mide el rendimiento, los resultados y las competencias de los empleados en relación con los objetivos establecidos, permitiendo la toma de decisiones sobre formación, retribución y carrera profesional."
+  },
+  {
+    "id": 6,
+    "text": "El cuadro de mando integral (Balanced Scorecard, BSC) organiza los indicadores de gestión en cuatro perspectivas. ¿Cuáles son?",
+    "options": {
+      "A": "Financiera, calidad, procesos y tecnología",
+      "B": "Financiera, clientes, procesos internos y aprendizaje/crecimiento",
+      "C": "Económica, social, ambiental y de gobernanza",
+      "D": "Eficiencia, eficacia, equidad y sostenibilidad"
+    },
+    "correct": "B",
+    "explanation": "El Balanced Scorecard de Kaplan y Norton organiza la estrategia en cuatro perspectivas: financiera (resultados económicos), clientes (satisfacción y valor), procesos internos (excelencia operativa) y aprendizaje/crecimiento (capital humano y organizativo)."
+  },
+  {
+    "id": 7,
+    "text": "¿Cuál es la diferencia entre eficiencia y eficacia en la gestión sanitaria?",
+    "options": {
+      "A": "Son sinónimos utilizados indistintamente",
+      "B": "La eficacia se refiere a lograr los objetivos; la eficiencia, a lograrlos optimizando los recursos utilizados",
+      "C": "La eficiencia mide la satisfacción del paciente; la eficacia mide el resultado clínico",
+      "D": "La eficacia es exclusivamente un indicador económico"
+    },
+    "correct": "B",
+    "explanation": "En gestión, eficacia es el grado en que se alcanzan los objetivos previstos, mientras que eficiencia implica alcanzar esos objetivos optimizando el uso de recursos (hacer las cosas bien). Una organización puede ser eficaz sin ser eficiente y viceversa."
+  },
+  {
+    "id": 8,
+    "text": "En la planificación estratégica, ¿qué es el análisis DAFO?",
+    "options": {
+      "A": "Un análisis de costes de la actividad hospitalaria",
+      "B": "Una herramienta que identifica Debilidades, Amenazas, Fortalezas y Oportunidades de la organización",
+      "C": "Un modelo de gestión de la calidad total",
+      "D": "Un sistema de indicadores de resultados en salud"
+    },
+    "correct": "B",
+    "explanation": "El análisis DAFO (SWOT en inglés) es una herramienta de planificación estratégica que analiza los factores internos (Debilidades y Fortalezas) y externos (Amenazas y Oportunidades) que afectan a la organización."
+  },
+  {
+    "id": 9,
+    "text": "En el ámbito de la responsabilidad patrimonial de la Administración Sanitaria, ¿cuál es el plazo para reclamar una lesión producida por la atención sanitaria?",
+    "options": {
+      "A": "6 meses desde el alta hospitalaria",
+      "B": "1 año desde que se conoció el daño o se estabilizaron los efectos lesivos",
+      "C": "5 años desde la fecha de la intervención",
+      "D": "2 años desde cualquier momento"
+    },
+    "correct": "B",
+    "explanation": "Según el artículo 67.1 de la Ley 39/2015, el plazo para reclamar la responsabilidad patrimonial de las Administraciones Públicas es de 1 año desde que se produjo el hecho o el acto que motive la indemnización o desde que se manifestó el efecto lesivo."
+  },
+  {
+    "id": 10,
+    "text": "¿Qué es el Contrato de Gestión de Osakidetza?",
+    "options": {
+      "A": "El contrato individual de trabajo de cada empleado público",
+      "B": "El instrumento de planificación que establece los objetivos anuales de las organizaciones de servicios y los recursos asignados",
+      "C": "El convenio colectivo del personal de Osakidetza",
+      "D": "El contrato de prestación de servicios con el sector privado"
+    },
+    "correct": "B",
+    "explanation": "El Contrato de Gestión es el instrumento de planificación y gestión que establece anualmente los objetivos de actividad, calidad y eficiencia de cada Organización de Servicios de Osakidetza, así como los recursos económicos asignados para su consecución."
+  },
+  {
+    "id": 11,
+    "text": "La Carrera Profesional en Osakidetza para el personal estatutario está regulada por:",
+    "options": {
+      "A": "El Estatuto Básico del Empleado Público (EBEP) exclusivamente",
+      "B": "El Acuerdo de Carrera Profesional del Personal Estatutario de Osakidetza",
+      "C": "El Real Decreto de Estatuto Marco del Personal Estatutario de los Servicios de Salud",
+      "D": "La Ley 44/2003 de Ordenación de las Profesiones Sanitarias"
+    },
+    "correct": "B",
+    "explanation": "La Carrera Profesional en Osakidetza está regulada por el Acuerdo de Carrera Profesional específico para el personal estatutario, que establece los niveles, requisitos y retribuciones de la progresión profesional."
+  },
+  {
+    "id": 12,
+    "text": "¿Qué son los GRD (Grupos Relacionados por el Diagnóstico)?",
+    "options": {
+      "A": "Un sistema de clasificación de pacientes en función de su diagnóstico y del consumo de recursos hospitalarios",
+      "B": "Un sistema de codificación de enfermedades de la OMS",
+      "C": "Un modelo de gestión de la atención primaria",
+      "D": "Un registro de enfermedades raras"
+    },
+    "correct": "A",
+    "explanation": "Los GRD (DRG en inglés) son un sistema de clasificación de episodios hospitalarios que agrupa a los pacientes en función de su diagnóstico principal, procedimientos realizados, edad y otros factores, resultando en grupos clínicamente similares con consumo de recursos comparable."
+  },
+  {
+    "id": 13,
+    "text": "En un proceso de resolución de un expediente administrativo sancionador, ¿qué garantía del procedimiento es fundamental?",
+    "options": {
+      "A": "La rapidez en la resolución",
+      "B": "El derecho de audiencia al interesado antes de dictar resolución",
+      "C": "La publicación del expediente en el BOE",
+      "D": "La intervención de un abogado de oficio"
+    },
+    "correct": "B",
+    "explanation": "El trámite de audiencia al interesado es un requisito esencial en el procedimiento sancionador, garantizado por el artículo 24 de la Constitución y regulado en la Ley 39/2015. Permite al afectado presentar alegaciones y pruebas antes de que se dicte resolución."
+  },
+  {
+    "id": 14,
+    "text": "¿Qué es la telemedicina en el contexto del sistema sanitario vasco?",
+    "options": {
+      "A": "La prescripción de medicamentos por internet sin control médico",
+      "B": "La prestación de servicios sanitarios a distancia mediante tecnologías de la información y comunicación",
+      "C": "Un sistema de telefonía exclusivo para urgencias",
+      "D": "El control remoto de equipos hospitalarios"
+    },
+    "correct": "B",
+    "explanation": "La telemedicina es la provisión de servicios sanitarios a distancia mediante el uso de tecnologías de la información y comunicación, incluyendo teleconsulta, telediagnóstico, telemonitorización y telecirugía."
+  },
+  {
+    "id": 15,
+    "text": "En el marco de la Unión Europea, la Directiva 2011/24/UE regula:",
+    "options": {
+      "A": "La libre circulación de medicamentos en la UE",
+      "B": "Los derechos de los pacientes en la asistencia sanitaria transfronteriza",
+      "C": "La formación de los profesionales sanitarios",
+      "D": "La investigación clínica con medicamentos"
+    },
+    "correct": "B",
+    "explanation": "La Directiva 2011/24/UE establece los derechos de los pacientes de la UE a recibir asistencia sanitaria en otro Estado miembro y a ser reembolsados de los gastos en las condiciones establecidas."
+  }
+]

@@ -1,0 +1,242 @@
+[
+  {
+    "id": 1,
+    "text": "¿Cuál es la función principal de un celador en un centro sanitario?",
+    "options": {
+      "A": "Administrar medicamentos a los pacientes",
+      "B": "Realizar el transporte y movilización de pacientes dentro del centro",
+      "C": "Realizar diagnósticos médicos auxiliares",
+      "D": "Gestionar las historias clínicas"
+    },
+    "correct": "B",
+    "explanation": "El celador tiene como función principal el transporte y movilización de pacientes, así como otras tareas de apoyo en el funcionamiento del centro sanitario."
+  },
+  {
+    "id": 2,
+    "text": "El salario mínimo interprofesional (SMI) en España se fija mediante:",
+    "options": {
+      "A": "Ley aprobada por el Congreso de los Diputados",
+      "B": "Real Decreto del Gobierno",
+      "C": "Decreto de la Comunidad Autónoma",
+      "D": "Convenio colectivo sectorial"
+    },
+    "correct": "B",
+    "explanation": "El Salario Mínimo Interprofesional se establece anualmente mediante Real Decreto del Gobierno, previa consulta con las organizaciones sindicales y empresariales más representativas."
+  },
+  {
+    "id": 3,
+    "text": "Las vacaciones anuales de los empleados públicos tienen una duración mínima de:",
+    "options": {
+      "A": "20 días laborables",
+      "B": "22 días laborables",
+      "C": "30 días naturales",
+      "D": "30 días laborables"
+    },
+    "correct": "C",
+    "explanation": "Según el EBEP, las vacaciones anuales retribuidas de los empleados públicos tienen una duración mínima de 30 días naturales por año completo de servicio."
+  },
+  {
+    "id": 4,
+    "text": "¿Qué significa la sigla OPE en el ámbito de la función pública sanitaria?",
+    "options": {
+      "A": "Orden de Provisión de Empleo",
+      "B": "Oferta Pública de Empleo",
+      "C": "Organismo de Personal Especializado",
+      "D": "Orden de Proceso de Evaluación"
+    },
+    "correct": "B",
+    "explanation": "OPE significa Oferta Pública de Empleo, que es el instrumento mediante el cual las Administraciones Públicas programan las necesidades de recursos humanos con asignación presupuestaria."
+  },
+  {
+    "id": 5,
+    "text": "El derecho de huelga de los trabajadores está regulado por:",
+    "options": {
+      "A": "La Constitución Española de 1978, artículo 28",
+      "B": "El Estatuto de los Trabajadores",
+      "C": "La Ley Orgánica Sindical",
+      "D": "El Real Decreto 17/1977"
+    },
+    "correct": "A",
+    "explanation": "El derecho de huelga está reconocido en el artículo 28 de la Constitución Española de 1978, aunque su regulación básica se establece en el Real Decreto-Ley 17/1977."
+  },
+  {
+    "id": 6,
+    "text": "En el ámbito sanitario, el término 'higiene de manos' es fundamental para:",
+    "options": {
+      "A": "Mejorar la imagen del personal sanitario",
+      "B": "Prevenir las infecciones nosocomiales o relacionadas con la asistencia sanitaria",
+      "C": "Cumplir con requisitos estéticos del centro",
+      "D": "Reducir el consumo de material sanitario"
+    },
+    "correct": "B",
+    "explanation": "La higiene de manos es la medida más efectiva para prevenir las infecciones nosocomiales (infecciones relacionadas con la asistencia sanitaria), reduciendo la transmisión de gérmenes entre pacientes y profesionales."
+  },
+  {
+    "id": 7,
+    "text": "¿Qué es la ergonomía en el ámbito laboral?",
+    "options": {
+      "A": "Disciplina que estudia los aspectos económicos del trabajo",
+      "B": "Ciencia que adapta el trabajo a las características del trabajador para prevenir lesiones",
+      "C": "Técnica de organización del tiempo de trabajo",
+      "D": "Sistema de evaluación del rendimiento laboral"
+    },
+    "correct": "B",
+    "explanation": "La ergonomía es la disciplina científica que adapta el entorno de trabajo, los equipos y las tareas a las capacidades y limitaciones del trabajador, con el objetivo de prevenir lesiones y mejorar la eficiencia."
+  },
+  {
+    "id": 8,
+    "text": "Un trabajador que sufre un accidente de trabajo in itinere lo hace:",
+    "options": {
+      "A": "Dentro del centro de trabajo",
+      "B": "Durante el trayecto de ida o vuelta al trabajo",
+      "C": "Durante una misión laboral fuera del centro",
+      "D": "En el comedor de la empresa"
+    },
+    "correct": "B",
+    "explanation": "El accidente in itinere es el que ocurre durante el trayecto habitual de ida o vuelta entre el domicilio del trabajador y el lugar de trabajo."
+  },
+  {
+    "id": 9,
+    "text": "La Seguridad Social en España está gestionada principalmente por:",
+    "options": {
+      "A": "El Ministerio de Economía",
+      "B": "El Instituto Nacional de la Seguridad Social (INSS) y la Tesorería General",
+      "C": "Las Mutuas Colaboradoras exclusivamente",
+      "D": "Los sindicatos y patronal conjuntamente"
+    },
+    "correct": "B",
+    "explanation": "La Seguridad Social en España está gestionada principalmente por el Instituto Nacional de la Seguridad Social (INSS), la Tesorería General de la Seguridad Social, y el Instituto Nacional de Gestión Sanitaria (INGESA)."
+  },
+  {
+    "id": 10,
+    "text": "¿Cuál de las siguientes situaciones corresponde a una enfermedad profesional?",
+    "options": {
+      "A": "Un accidente ocurrido en el lugar de trabajo",
+      "B": "Una enfermedad contraída como consecuencia del trabajo en actividades incluidas en la lista oficial",
+      "C": "Cualquier enfermedad que padezca el trabajador",
+      "D": "Una lesión causada por un agente externo en el domicilio del trabajador"
+    },
+    "correct": "B",
+    "explanation": "La enfermedad profesional es la contraída a consecuencia del trabajo ejecutado por cuenta ajena en las actividades especificadas en el cuadro oficial de enfermedades profesionales."
+  },
+  {
+    "id": 11,
+    "text": "El documento de voluntades anticipadas (o testamento vital) permite a una persona:",
+    "options": {
+      "A": "Decidir sobre su herencia en vida",
+      "B": "Manifestar sus deseos sobre los cuidados médicos que quiere recibir en caso de no poder expresarlos",
+      "C": "Designar a su médico de cabecera",
+      "D": "Solicitar el alta voluntaria de un hospital"
+    },
+    "correct": "B",
+    "explanation": "El documento de voluntades anticipadas (DVA) permite que una persona mayor de edad manifieste los cuidados y el tratamiento médico que quiere o que no quiere que se le apliquen cuando ya no pueda expresar su voluntad."
+  },
+  {
+    "id": 12,
+    "text": "El uso de equipos de protección individual (EPI) en el trabajo sanitario:",
+    "options": {
+      "A": "Es una medida preventiva de primer nivel",
+      "B": "Sustituye a las demás medidas de prevención",
+      "C": "Es una medida preventiva complementaria cuando otros medios no son suficientes",
+      "D": "Solo es obligatorio en quirófanos"
+    },
+    "correct": "C",
+    "explanation": "Los EPIs son la última barrera de protección y se utilizan cuando los riesgos no han podido eliminarse o reducirse suficientemente mediante otras medidas preventivas colectivas o de organización del trabajo."
+  },
+  {
+    "id": 13,
+    "text": "La gestión de residuos sanitarios en hospitales clasifica los residuos en grupos. Los residuos del Grupo III son:",
+    "options": {
+      "A": "Residuos asimilables a urbanos",
+      "B": "Residuos biosanitarios especiales (con riesgo biológico significativo)",
+      "C": "Cadáveres y restos humanos",
+      "D": "Residuos citostáticos"
+    },
+    "correct": "B",
+    "explanation": "Los residuos del Grupo III son los residuos biosanitarios especiales que presentan un riesgo biológico significativo, como materiales contaminados con agentes infecciosos, agujas, etc."
+  },
+  {
+    "id": 14,
+    "text": "Las cargas de trabajo en el personal auxiliar sanitario pueden generar principalmente:",
+    "options": {
+      "A": "Riesgos de tipo químico",
+      "B": "Riesgos musculoesqueléticos por movilización de pacientes",
+      "C": "Riesgos de tipo radiológico",
+      "D": "Riesgos por exposición a temperaturas extremas"
+    },
+    "correct": "B",
+    "explanation": "El personal auxiliar sanitario está expuesto principalmente a riesgos musculoesqueléticos derivados de la movilización y el transporte de pacientes, siendo una de las principales causas de lesiones laborales."
+  },
+  {
+    "id": 15,
+    "text": "En el ámbito de las comunicaciones sanitarias, la historia clínica electrónica tiene como ventaja principal:",
+    "options": {
+      "A": "Eliminar la responsabilidad médica",
+      "B": "Facilitar el acceso a la información del paciente de forma integrada y segura",
+      "C": "Sustituir la relación médico-paciente",
+      "D": "Reducir la plantilla de personal administrativo"
+    },
+    "correct": "B",
+    "explanation": "La historia clínica electrónica permite el acceso inmediato, seguro e integrado a la información del paciente por los profesionales autorizados, mejorando la continuidad asistencial y la seguridad del paciente."
+  },
+  {
+    "id": 16,
+    "text": "¿Qué es el IRAP (Instrumento de Reconocimiento de la Atención a las Personas) en el sistema sanitario vasco?",
+    "options": {
+      "A": "Un sistema de evaluación del desempeño del personal",
+      "B": "Un instrumento para la valoración de la autonomía y necesidades de atención de las personas",
+      "C": "Un protocolo de urgencias hospitalarias",
+      "D": "Un sistema de facturación de servicios sanitarios"
+    },
+    "correct": "B",
+    "explanation": "El IRAP es el instrumento de valoración utilizado en el País Vasco para determinar el grado de autonomía y las necesidades de atención de las personas, especialmente en el ámbito de la dependencia."
+  },
+  {
+    "id": 17,
+    "text": "En prevención de riesgos, la señal de evacuación tiene un fondo de color:",
+    "options": {
+      "A": "Rojo",
+      "B": "Amarillo",
+      "C": "Verde",
+      "D": "Azul"
+    },
+    "correct": "C",
+    "explanation": "Las señales de evacuación y salvamento tienen fondo verde con pictograma blanco, según el Real Decreto 485/1997 sobre señalización de seguridad y salud en el trabajo."
+  },
+  {
+    "id": 18,
+    "text": "La comunicación no verbal en el ámbito sanitario incluye:",
+    "options": {
+      "A": "Únicamente el lenguaje de signos",
+      "B": "Gestos, expresiones faciales, contacto visual y postura corporal",
+      "C": "Solo los documentos escritos",
+      "D": "Las comunicaciones telefónicas"
+    },
+    "correct": "B",
+    "explanation": "La comunicación no verbal comprende todos los elementos de la comunicación que no son las palabras: gestos, expresiones faciales, mirada, postura corporal, tono de voz, proximidad física, etc."
+  },
+  {
+    "id": 19,
+    "text": "Cuando se produce una exposición accidental a material biológico (pinchazo), el protocolo de actuación establece como primera medida:",
+    "options": {
+      "A": "Acudir inmediatamente al médico del trabajo",
+      "B": "Lavar la herida con agua y jabón abundantemente",
+      "C": "Aplicar torniquete en la zona afectada",
+      "D": "Notificar el accidente al jefe de servicio"
+    },
+    "correct": "B",
+    "explanation": "Ante una exposición accidental a material biológico, la primera medida es lavar exhaustivamente con agua y jabón la zona afectada durante varios minutos, antes de cualquier otra acción."
+  },
+  {
+    "id": 20,
+    "text": "¿Qué derecho garantiza que toda persona tiene libre acceso a los servicios sanitarios independientemente de su situación económica en España?",
+    "options": {
+      "A": "Derecho a la propiedad",
+      "B": "Derecho a la protección de la salud, reconocido en el artículo 43 de la Constitución",
+      "C": "Derecho al trabajo",
+      "D": "Derecho a la educación"
+    },
+    "correct": "B",
+    "explanation": "El artículo 43 de la Constitución Española reconoce el derecho a la protección de la salud y encomienda a los poderes públicos organizar y tutelar la salud pública a través de medidas preventivas y de las prestaciones y servicios necesarios."
+  }
+]

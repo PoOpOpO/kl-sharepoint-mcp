@@ -1,0 +1,302 @@
+[
+  {
+    "id": 1,
+    "text": "¿Cuál es la frecuencia respiratoria normal en adultos en reposo?",
+    "options": {
+      "A": "6-10 respiraciones por minuto",
+      "B": "12-20 respiraciones por minuto",
+      "C": "25-35 respiraciones por minuto",
+      "D": "40-60 respiraciones por minuto"
+    },
+    "correct": "B",
+    "explanation": "La frecuencia respiratoria normal en adultos en reposo es de 12-20 respiraciones por minuto. Valores superiores se denominan taquipnea e inferiores bradipnea."
+  },
+  {
+    "id": 2,
+    "text": "En el tratamiento de una parada cardiorrespiratoria (PCR) en adultos, según las guías ERC 2021, la ratio comprensión-ventilación es:",
+    "options": {
+      "A": "15:2",
+      "B": "30:2",
+      "C": "20:1",
+      "D": "10:1"
+    },
+    "correct": "B",
+    "explanation": "Según las guías del European Resuscitation Council (ERC) 2021, la ratio recomendada en la RCP básica para adultos es de 30 compresiones torácicas seguidas de 2 ventilaciones (30:2)."
+  },
+  {
+    "id": 3,
+    "text": "La escala de Glasgow evalúa el nivel de consciencia mediante tres parámetros. ¿Cuáles son?",
+    "options": {
+      "A": "Frecuencia cardíaca, respiración y reflejos",
+      "B": "Apertura ocular, respuesta verbal y respuesta motora",
+      "C": "Presión arterial, pulso y temperatura",
+      "D": "Orientación, memoria y lenguaje"
+    },
+    "correct": "B",
+    "explanation": "La Escala de Coma de Glasgow evalúa la apertura ocular (E: 1-4), la respuesta verbal (V: 1-5) y la respuesta motora (M: 1-6), con una puntuación máxima de 15 (normal) y mínima de 3 (coma profundo)."
+  },
+  {
+    "id": 4,
+    "text": "¿Cuál es el antibiótico de primera elección en la neumonía adquirida en la comunidad (NAC) de un adulto sin comorbilidades?",
+    "options": {
+      "A": "Vancomicina",
+      "B": "Amoxicilina o amoxicilina-clavulánico",
+      "C": "Azitromicina como monoterapia siempre",
+      "D": "Ciprofloxacino"
+    },
+    "correct": "B",
+    "explanation": "En la NAC de paciente ambulatorio sin comorbilidades, la amoxicilina o amoxicilina-clavulánico son el tratamiento de primera elección, cubriendo el principal agente causante (Streptococcus pneumoniae)."
+  },
+  {
+    "id": 5,
+    "text": "¿Qué es la tensión arterial media (TAM)?",
+    "options": {
+      "A": "La media aritmética entre sistólica y diastólica",
+      "B": "La presión de perfusión tisular, calculada como: diastólica + 1/3 (sistólica - diastólica)",
+      "C": "La presión registrada en el ventrículo izquierdo",
+      "D": "La presión venosa central normalizada"
+    },
+    "correct": "B",
+    "explanation": "La TAM refleja la perfusión tisular media. Se calcula como: PAD + 1/3(PAS-PAD), siendo un valor normal de 70-100 mmHg. Por debajo de 65 mmHg existe riesgo de hipoperfusión orgánica."
+  },
+  {
+    "id": 6,
+    "text": "En el sistema de clasificación de heridas quirúrgicas, ¿qué tipo de herida corresponde a una operación de cirugía colorrectal electiva?",
+    "options": {
+      "A": "Herida limpia (Tipo I)",
+      "B": "Herida limpia-contaminada (Tipo II)",
+      "C": "Herida contaminada (Tipo III)",
+      "D": "Herida sucia (Tipo IV)"
+    },
+    "correct": "B",
+    "explanation": "Las intervenciones en el tracto digestivo (como la cirugía colorrectal electiva) se clasifican como heridas limpia-contaminadas (Tipo II), porque se accede a un órgano interno pero de forma controlada."
+  },
+  {
+    "id": 7,
+    "text": "¿Cuáles son los valores normales de glucemia en ayunas?",
+    "options": {
+      "A": "Menos de 70 mg/dL",
+      "B": "70-100 mg/dL",
+      "C": "100-125 mg/dL",
+      "D": "Más de 126 mg/dL"
+    },
+    "correct": "B",
+    "explanation": "La glucemia en ayunas normal es de 70-100 mg/dL. Entre 100-125 mg/dL se denomina glucosa en ayunas alterada (prediabetes). Por encima de 126 mg/dL en dos determinaciones se establece el diagnóstico de diabetes mellitus."
+  },
+  {
+    "id": 8,
+    "text": "La escala Norton se utiliza para valorar el riesgo de:",
+    "options": {
+      "A": "Caídas en pacientes hospitalizados",
+      "B": "Úlceras por presión (UPP)",
+      "C": "Infección nosocomial",
+      "D": "Deterioro cognitivo"
+    },
+    "correct": "B",
+    "explanation": "La escala Norton es una de las herramientas estandarizadas más utilizadas para valorar el riesgo de úlceras por presión (UPP), evaluando condición física, mental, actividad, movilidad e incontinencia."
+  },
+  {
+    "id": 9,
+    "text": "¿Cuál de los siguientes signos es característico de la trombosis venosa profunda (TVP)?",
+    "options": {
+      "A": "Signo de Murphy positivo",
+      "B": "Signo de Homans positivo (dolor en pantorrilla con dorsiflexión del pie)",
+      "C": "Signo de Blumberg positivo",
+      "D": "Signo de Kernig positivo"
+    },
+    "correct": "B",
+    "explanation": "El signo de Homans (dolor en la pantorrilla al realizar dorsiflexión pasiva del pie) es uno de los signos clásicos de TVP, aunque tiene limitada sensibilidad y especificidad."
+  },
+  {
+    "id": 10,
+    "text": "La administración intravenosa de cloruro potásico (ClK) concentrado sin diluir puede causar:",
+    "options": {
+      "A": "Hipoglucemia grave",
+      "B": "Parada cardíaca por hiperpotasemia",
+      "C": "Hiponatremia dilucional",
+      "D": "Crisis hipertensiva"
+    },
+    "correct": "B",
+    "explanation": "La administración de cloruro potásico concentrado sin diluir por vía IV es una práctica peligrosa que puede provocar hiperpotasemia aguda y parada cardíaca. Es uno de los medicamentos de alta alerta más críticos en hospitales."
+  },
+  {
+    "id": 11,
+    "text": "¿Qué es la técnica de inserción de catéter venoso periférico más recomendada para reducir infecciones?",
+    "options": {
+      "A": "Técnica limpia con guantes de látex sin esterilizar",
+      "B": "Técnica aséptica con desinfección de la piel con clorhexidina al 2%",
+      "C": "Técnica limpia con alcohol de 70°",
+      "D": "No es necesaria ninguna técnica especial en venas superficiales"
+    },
+    "correct": "B",
+    "explanation": "La técnica aséptica con desinfección de la piel con clorhexidina alcohólica al 2% está recomendada por las guías para la inserción de catéteres vasculares, reduciendo las infecciones relacionadas con el catéter."
+  },
+  {
+    "id": 12,
+    "text": "El diagnóstico de sepsis según los criterios Sepsis-3 (2016) se basa en:",
+    "options": {
+      "A": "Temperatura >38°C o <36°C más leucocitosis",
+      "B": "Disfunción orgánica potencialmente mortal causada por respuesta desregulada a la infección, con score SOFA ≥2",
+      "C": "Presencia de bacterias en hemocultivos",
+      "D": "Fiebre más hipotensión arterial"
+    },
+    "correct": "B",
+    "explanation": "Según los criterios Sepsis-3 (2016), la sepsis se define como una disfunción orgánica potencialmente mortal causada por una respuesta desregulada del huésped a la infección, objetivada por un aumento del score SOFA de ≥2 puntos."
+  },
+  {
+    "id": 13,
+    "text": "En el manejo del paciente con insuficiencia cardíaca descompensada, ¿cuál es el fármaco diurético de primera línea?",
+    "options": {
+      "A": "Hidroclorotiazida",
+      "B": "Espironolactona",
+      "C": "Furosemida",
+      "D": "Acetazolamida"
+    },
+    "correct": "C",
+    "explanation": "La furosemida (un diurético de asa) es el fármaco diurético de primera línea en la insuficiencia cardíaca descompensada por su potente efecto sobre la excreción de agua y sodio."
+  },
+  {
+    "id": 14,
+    "text": "¿Cuál de las siguientes afirmaciones sobre la insulina NPH es correcta?",
+    "options": {
+      "A": "Es de acción ultrarrápida",
+      "B": "Es una insulina de acción intermedia",
+      "C": "No precisa refrigeración",
+      "D": "Se puede mezclar con insulina glargina"
+    },
+    "correct": "B",
+    "explanation": "La insulina NPH es una insulina de acción intermedia, con inicio de acción a las 1-2 horas, pico de acción a las 4-12 horas y duración de 18-24 horas. Se administra habitualmente 1-2 veces al día."
+  },
+  {
+    "id": 15,
+    "text": "La técnica de punción lumbar para extracción de líquido cefalorraquídeo (LCR) se realiza habitualmente entre los espacios:",
+    "options": {
+      "A": "L1-L2",
+      "B": "L3-L4 o L4-L5",
+      "C": "T12-L1",
+      "D": "S1-S2"
+    },
+    "correct": "B",
+    "explanation": "La punción lumbar se realiza habitualmente entre L3-L4 o L4-L5, por debajo del final de la médula espinal (cono medular, que termina en L1-L2 en adultos), para evitar lesionarla."
+  },
+  {
+    "id": 16,
+    "text": "¿Qué fármaco se administra como antídoto específico en la intoxicación por paracetamol?",
+    "options": {
+      "A": "Flumazenilo",
+      "B": "Naloxona",
+      "C": "N-acetilcisteína",
+      "D": "Atropina"
+    },
+    "correct": "C",
+    "explanation": "La N-acetilcisteína (NAC) es el antídoto específico para la intoxicación por paracetamol, actuando como precursor del glutatión y neutralizando el metabolito tóxico NAPQI que causa el daño hepático."
+  },
+  {
+    "id": 17,
+    "text": "En la valoración de enfermería según el modelo de Marjory Gordon, ¿cuántos patrones funcionales se identifican?",
+    "options": {
+      "A": "7 patrones",
+      "B": "11 patrones",
+      "C": "14 patrones",
+      "D": "21 patrones"
+    },
+    "correct": "B",
+    "explanation": "El modelo de valoración de Marjory Gordon identifica 11 patrones funcionales de salud para organizar la evaluación integral del paciente y establecer diagnósticos de enfermería."
+  },
+  {
+    "id": 18,
+    "text": "La heparina de bajo peso molecular (HBPM) se administra habitualmente por vía:",
+    "options": {
+      "A": "Intravenosa en bolo",
+      "B": "Intramuscular",
+      "C": "Subcutánea",
+      "D": "Intraarticular"
+    },
+    "correct": "C",
+    "explanation": "Las heparinas de bajo peso molecular (como enoxaparina, bemiparina) se administran por vía subcutánea, generalmente en el abdomen, con una posología de 1-2 veces al día según la indicación."
+  },
+  {
+    "id": 19,
+    "text": "¿Cuál es la principal función del calcio en el organismo?",
+    "options": {
+      "A": "Transporte de oxígeno en sangre",
+      "B": "Estructura ósea y dental, y función en la contracción muscular y coagulación",
+      "C": "Regulación del equilibrio ácido-base",
+      "D": "Síntesis de proteínas en el hígado"
+    },
+    "correct": "B",
+    "explanation": "El calcio es fundamental para la estructura ósea y dental (99% del calcio corporal está en huesos y dientes), y también participa en la contracción muscular, transmisión nerviosa, coagulación sanguínea y secreción hormonal."
+  },
+  {
+    "id": 20,
+    "text": "Un paciente presenta saturación de oxígeno del 88% con gafas nasales a 2L/min. ¿Cuál sería la primera intervención de enfermería?",
+    "options": {
+      "A": "Preparar la intubación orotraqueal urgente",
+      "B": "Aumentar el flujo de oxígeno y colocar al paciente en posición semisentado",
+      "C": "Administrar morfina para disminuir la ansiedad",
+      "D": "Solicitar analítica de control y esperar resultados"
+    },
+    "correct": "B",
+    "explanation": "Ante una saturación de O2 del 88%, la primera intervención es aumentar el flujo de oxígeno y colocar al paciente en posición semisentada (Fowler) para optimizar la mecánica ventilatoria, valorando la respuesta antes de escalar a dispositivos de mayor flujo."
+  },
+  {
+    "id": 21,
+    "text": "¿Cuál es el valor normal del sodio sérico (natremia)?",
+    "options": {
+      "A": "100-115 mEq/L",
+      "B": "135-145 mEq/L",
+      "C": "150-165 mEq/L",
+      "D": "3.5-5 mEq/L"
+    },
+    "correct": "B",
+    "explanation": "El valor normal de sodio sérico es de 135-145 mEq/L. Por debajo de 135 mEq/L se denomina hiponatremia y por encima de 145 mEq/L hipernatremia."
+  },
+  {
+    "id": 22,
+    "text": "En el manejo de la vía aérea, la maniobra frente-mentón se utiliza para:",
+    "options": {
+      "A": "Prevenir el vómito en pacientes inconscientes",
+      "B": "Abrir la vía aérea en pacientes sin sospecha de lesión cervical",
+      "C": "Realizar intubación endotraqueal rápida",
+      "D": "Aspirar secreciones de la faringe"
+    },
+    "correct": "B",
+    "explanation": "La maniobra frente-mentón (extensión de la cabeza con elevación del mentón) se utiliza para abrir la vía aérea en pacientes inconscientes sin sospecha de lesión cervical, desplazando la lengua hacia adelante."
+  },
+  {
+    "id": 23,
+    "text": "¿Cuál de los siguientes es un signo típico de hipoglucemia?",
+    "options": {
+      "A": "Polidipsia y poliuria",
+      "B": "Diaforesis, temblor y confusión",
+      "C": "Hipertensión arterial y bradicardia",
+      "D": "Fiebre alta y rigidez"
+    },
+    "correct": "B",
+    "explanation": "Los signos y síntomas de hipoglucemia incluyen diaforesis (sudoración fría), temblor, taquicardia, ansiedad, y cuando es intensa: confusión, convulsiones y pérdida de consciencia."
+  },
+  {
+    "id": 24,
+    "text": "La profilaxis antibiótica quirúrgica se administra:",
+    "options": {
+      "A": "Una semana antes de la intervención",
+      "B": "30-60 minutos antes de la incisión quirúrgica",
+      "C": "Inmediatamente después del cierre de la herida",
+      "D": "Solo si hay infección establecida"
+    },
+    "correct": "B",
+    "explanation": "La profilaxis antibiótica quirúrgica debe administrarse 30-60 minutos antes de la incisión para asegurar niveles adecuados en los tejidos en el momento de la contaminación potencial."
+  },
+  {
+    "id": 25,
+    "text": "¿Cuál es la complicación más grave de la embolia pulmonar masiva?",
+    "options": {
+      "A": "Derrame pleural",
+      "B": "Shock obstructivo y parada cardiorrespiratoria",
+      "C": "Neumonía por aspiración",
+      "D": "Fibrilación auricular"
+    },
+    "correct": "B",
+    "explanation": "La embolia pulmonar masiva puede causar shock obstructivo grave por obstrucción del flujo sanguíneo pulmonar, con hipotensión severa que puede progresar a parada cardiorrespiratoria si no se trata urgentemente."
+  }
+]

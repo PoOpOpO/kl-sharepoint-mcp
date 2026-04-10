@@ -1,0 +1,242 @@
+[
+  {
+    "id": 1,
+    "text": "¿Cuál es la temperatura axilar normal en un adulto?",
+    "options": {
+      "A": "35,0 - 36,0 °C",
+      "B": "36,0 - 37,0 °C",
+      "C": "37,5 - 38,5 °C",
+      "D": "38,0 - 39,0 °C"
+    },
+    "correct": "B",
+    "explanation": "La temperatura axilar normal en adultos es de 36,0 a 37,0 °C. La rectal es aproximadamente 0,5 °C más alta, y la oral unos 0,3-0,5 °C más alta que la axilar."
+  },
+  {
+    "id": 2,
+    "text": "Al realizar el aseo de un paciente encamado, ¿cuál es el orden correcto de la higiene corporal?",
+    "options": {
+      "A": "Primero los genitales y después el resto del cuerpo",
+      "B": "De la zona más limpia a la más contaminada: cara, cuello, tronco, extremidades y zona genital al final",
+      "C": "Comenzar siempre por los pies y terminar por la cara",
+      "D": "No tiene importancia el orden si se usa jabón adecuado"
+    },
+    "correct": "B",
+    "explanation": "El aseo del paciente debe realizarse de la zona más limpia a la más contaminada: comenzando por cara y cuello, siguiendo por tronco y extremidades superiores, luego extremidades inferiores, y terminando por la zona genital y perianal."
+  },
+  {
+    "id": 3,
+    "text": "¿Cuál es la posición adecuada para un paciente con dificultad respiratoria?",
+    "options": {
+      "A": "Decúbito supino (boca arriba completamente horizontal)",
+      "B": "Decúbito prono (boca abajo)",
+      "C": "Posición de Fowler o semiFowler (incorporado 45-90°)",
+      "D": "Posición de Trendelenburg (cabeza más baja que los pies)"
+    },
+    "correct": "C",
+    "explanation": "La posición de Fowler (incorporado entre 45° y 90°) mejora la expansión pulmonar y facilita la respiración al bajar los órganos abdominales, reduciendo la presión sobre el diafragma."
+  },
+  {
+    "id": 4,
+    "text": "Para prevenir las úlceras por presión (UPP), ¿con qué frecuencia mínima se debe cambiar de posición a un paciente encamado?",
+    "options": {
+      "A": "Cada 8 horas",
+      "B": "Cada 4-6 horas",
+      "C": "Cada 2 horas",
+      "D": "Una vez al día"
+    },
+    "correct": "C",
+    "explanation": "Para prevenir las úlceras por presión, se recomienda realizar cambios posturales cada 2 horas en pacientes encamados, siguiendo un plan de rotación sistemático."
+  },
+  {
+    "id": 5,
+    "text": "¿Qué técnica se utiliza para realizar una cama ocupada?",
+    "options": {
+      "A": "No es posible hacer la cama con el paciente dentro",
+      "B": "Se realiza desde un lado de la cama al otro, movilizando al paciente lateralmente",
+      "C": "Se levanta al paciente a una silla mientras se hace la cama completa",
+      "D": "Se realiza con el paciente sentado en el borde de la cama"
+    },
+    "correct": "B",
+    "explanation": "La cama ocupada se realiza trabajando desde un lado de la cama, colocando el ropa nueva por debajo del paciente, y luego movilizando lateralmente al paciente para terminar el lado contrario, sin levantarlo de la cama."
+  },
+  {
+    "id": 6,
+    "text": "El pulso radial se palpa en la arteria:",
+    "options": {
+      "A": "Cubital del antebrazo",
+      "B": "Radial en la cara anterior de la muñeca, lado del pulgar",
+      "C": "Braquial del codo",
+      "D": "Carótida del cuello"
+    },
+    "correct": "B",
+    "explanation": "El pulso radial se palpa colocando los dedos índice y medio sobre la arteria radial, en la cara anterior (palmar) de la muñeca, en el lado del pulgar (zona tenar)."
+  },
+  {
+    "id": 7,
+    "text": "¿Qué es la técnica de movilización 'rodillo'?",
+    "options": {
+      "A": "Técnica para levantar a un paciente del suelo",
+      "B": "Técnica de movilización lateral en bloque del paciente sin doblar el cuerpo",
+      "C": "Ejercicio de rehabilitación para pacientes con lesión medular",
+      "D": "Sistema para transportar pacientes en camilla"
+    },
+    "correct": "B",
+    "explanation": "La técnica del rodillo (o volteo en bloque) es una técnica de movilización que permite girar al paciente de un lado a otro manteniendo la alineación corporal, especialmente importante en pacientes con lesiones de columna."
+  },
+  {
+    "id": 8,
+    "text": "La vía de administración de medicamentos que evita el primer paso hepático y permite la absorción directa al torrente sanguíneo es:",
+    "options": {
+      "A": "Vía oral",
+      "B": "Vía intravenosa",
+      "C": "Vía rectal",
+      "D": "Vía intramuscular"
+    },
+    "correct": "B",
+    "explanation": "La vía intravenosa administra el medicamento directamente al torrente circulatorio, evitando el primer paso hepático y garantizando una biodisponibilidad del 100%."
+  },
+  {
+    "id": 9,
+    "text": "¿Cuál es la presión arterial normal en un adulto?",
+    "options": {
+      "A": "90/60 mmHg",
+      "B": "120/80 mmHg",
+      "C": "140/90 mmHg",
+      "D": "160/100 mmHg"
+    },
+    "correct": "B",
+    "explanation": "La presión arterial normal en adultos es de aproximadamente 120/80 mmHg (sistólica/diastólica). Por encima de 140/90 mmHg se considera hipertensión arterial."
+  },
+  {
+    "id": 10,
+    "text": "Al atender a un paciente incontinente, ¿cuál es la medida más importante para prevenir lesiones cutáneas?",
+    "options": {
+      "A": "Usar solo compresas absorbentes",
+      "B": "Limpieza inmediata de la zona, secado y aplicación de crema barrera protectora",
+      "C": "Dejar que la piel se airee sin ninguna protección",
+      "D": "Aplicar polvos de talco generosamente"
+    },
+    "correct": "B",
+    "explanation": "Ante la incontinencia, es fundamental limpiar inmediatamente la zona con agua y jabón suave, secar bien sin frotar, y aplicar cremas o películas barrera para proteger la piel del contacto con la humedad y las heces."
+  },
+  {
+    "id": 11,
+    "text": "¿Qué es la dieta absoluta o ayuno?",
+    "options": {
+      "A": "Dieta sin sal",
+      "B": "Prohibición total de ingesta oral de alimentos y líquidos",
+      "C": "Dieta líquida exclusiva",
+      "D": "Restricción de alimentos con alto contenido en azúcar"
+    },
+    "correct": "B",
+    "explanation": "La dieta absoluta (DA) implica la prohibición total de ingesta oral, tanto de alimentos sólidos como de líquidos, siendo habitual antes de intervenciones quirúrgicas o procedimientos diagnósticos."
+  },
+  {
+    "id": 12,
+    "text": "¿Cuál es el objetivo principal de la sonda nasogástrica (SNG) en un paciente postoperatorio?",
+    "options": {
+      "A": "Administrar nutrición enteral",
+      "B": "Realizar lavado gástrico urgente",
+      "C": "Descomprimir el estómago extrayendo contenido gástrico y gas",
+      "D": "Administrar medicación oral"
+    },
+    "correct": "C",
+    "explanation": "En el postoperatorio, la SNG se utiliza principalmente para descomprimir el estómago, drenando el contenido gástrico y el gas acumulado, reduciendo así las náuseas, vómitos y distensión abdominal."
+  },
+  {
+    "id": 13,
+    "text": "¿Qué es la técnica de 'asepsia médica'?",
+    "options": {
+      "A": "Eliminación de todos los microorganismos incluidas las esporas",
+      "B": "Reducción del número y transferencia de microorganismos patógenos",
+      "C": "Uso de antibióticos profilácticos",
+      "D": "Esterilización de todos los materiales en contacto con el paciente"
+    },
+    "correct": "B",
+    "explanation": "La asepsia médica (o técnica limpia) busca reducir el número de microorganismos y prevenir su transferencia. Se diferencia de la asepsia quirúrgica (técnica estéril) que elimina todos los microorganismos."
+  },
+  {
+    "id": 14,
+    "text": "El glucómetro se utiliza para medir:",
+    "options": {
+      "A": "La presión arterial capilar",
+      "B": "La concentración de glucosa en sangre capilar",
+      "C": "La saturación de oxígeno",
+      "D": "El pH sanguíneo"
+    },
+    "correct": "B",
+    "explanation": "El glucómetro es un dispositivo portátil que mide la concentración de glucosa en una pequeña muestra de sangre capilar, habitualmente obtenida del dedo, permitiendo el autocontrol de la diabetes."
+  },
+  {
+    "id": 15,
+    "text": "Al realizar una enema de limpieza, ¿en qué posición se coloca al paciente?",
+    "options": {
+      "A": "Decúbito supino",
+      "B": "Posición de Sims o decúbito lateral izquierdo",
+      "C": "Posición de Fowler",
+      "D": "Decúbito prono"
+    },
+    "correct": "B",
+    "explanation": "La posición de Sims (decúbito lateral izquierdo con rodilla derecha flexionada) es la posición estándar para administrar una enema, ya que facilita la instilación del líquido siguiendo la curvatura del colon sigmoide."
+  },
+  {
+    "id": 16,
+    "text": "¿Cuál es el procedimiento correcto para la recogida de muestra de orina para cultivo (urocultivo)?",
+    "options": {
+      "A": "Recoger la primera orina de la mañana en cualquier recipiente",
+      "B": "Recoger la orina de chorro medio en un recipiente estéril, previo aseo genital",
+      "C": "Recoger la orina de 24 horas completas",
+      "D": "Recoger orina del final de la micción"
+    },
+    "correct": "B",
+    "explanation": "Para el urocultivo, se recoge la orina de chorro medio (descartando la primera porción) en un recipiente estéril, previa higiene de la zona genital con agua y jabón, para evitar la contaminación con la flora periuretral."
+  },
+  {
+    "id": 17,
+    "text": "¿Qué se debe hacer si al administrar medicación por sonda nasogástrica (SNG) el paciente tiene el residuo gástrico muy elevado?",
+    "options": {
+      "A": "Continuar la administración de medicación normalmente",
+      "B": "Notificar al personal de enfermería y retrasar la administración hasta recibir instrucciones",
+      "C": "Retirar la sonda y colocar una nueva",
+      "D": "Administrar la medicación intravenosa sin consultar"
+    },
+    "correct": "B",
+    "explanation": "Ante un residuo gástrico elevado, el TCAE debe notificar al personal de enfermería antes de administrar medicación, ya que podría indicar intolerancia a la nutrición enteral o problemas del vaciamiento gástrico."
+  },
+  {
+    "id": 18,
+    "text": "El catéter urinario o sonda vesical de Foley se caracteriza por:",
+    "options": {
+      "A": "No tener balón de retención",
+      "B": "Tener un balón inflable que lo fija en la vejiga",
+      "C": "Ser de uso exclusivo en mujeres",
+      "D": "Utilizarse solo para cistografías"
+    },
+    "correct": "B",
+    "explanation": "La sonda de Foley es un catéter urinario permanente que dispone de un balón que se infla con agua estéril una vez insertado en la vejiga, fijándolo y evitando que se salga."
+  },
+  {
+    "id": 19,
+    "text": "¿Cuál es la zona recomendada para la administración de inyección intramuscular en el muslo (autoadministración o lactantes)?",
+    "options": {
+      "A": "Cara interna del muslo",
+      "B": "Cara anterolateral del tercio medio del muslo (vasto lateral)",
+      "C": "Cara posterior del muslo",
+      "D": "Zona inguinal"
+    },
+    "correct": "B",
+    "explanation": "La cara anterolateral del tercio medio del muslo (músculo vasto lateral) es la zona recomendada para la inyección intramuscular en lactantes y para la autoadministración, por la accesibilidad y el escaso riesgo de lesionar estructuras nobles."
+  },
+  {
+    "id": 20,
+    "text": "La mucosa oral de un paciente está seca y con la lengua saburral. Esto es indicativo de:",
+    "options": {
+      "A": "Buena hidratación",
+      "B": "Posible deshidratación o higiene oral deficiente",
+      "C": "Infección grave sistémica",
+      "D": "Reacción a medicamentos antihipertensivos"
+    },
+    "correct": "B",
+    "explanation": "La mucosa oral seca, la lengua saburral (con depósitos blanquecinos) y los labios agrietados son signos de posible deshidratación e higiene oral deficiente, que deben comunicarse al equipo de enfermería."
+  }
+]
