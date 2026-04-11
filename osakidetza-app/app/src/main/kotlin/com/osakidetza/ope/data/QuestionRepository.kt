@@ -3,7 +3,6 @@ package com.osakidetza.ope.data
 import android.content.Context
 import androidx.datastore.preferences.core.edit
 import com.google.gson.Gson
-import com.google.gson.JsonObject
 import com.google.gson.reflect.TypeToken
 import com.osakidetza.ope.data.model.AnswerRecord
 import com.osakidetza.ope.data.model.Category
@@ -12,9 +11,11 @@ import com.osakidetza.ope.data.model.Question
 import com.osakidetza.ope.data.model.QuizResult
 import com.osakidetza.ope.data.model.StatsKeys
 import com.osakidetza.ope.data.model.dataStore
+import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.flow.Flow
 import kotlinx.coroutines.flow.first
 import kotlinx.coroutines.flow.map
+import kotlinx.coroutines.withContext
 
 class QuestionRepository(private val context: Context) {
 
@@ -93,9 +94,9 @@ class QuestionRepository(private val context: Context) {
         )
     )
 
-    fun loadQuestions(categoryId: String): List<Question> {
-        val category = categories.find { it.id == categoryId } ?: return emptyList()
-        return try {
+    suspend fun loadQuestions(categoryId: String): List<Question> = withContext(Dispatchers.IO) {
+        val category = categories.find { it.id == categoryId } ?: return@withContext emptyList()
+        try {
             val json = context.assets.open(category.questionFile).bufferedReader().use { it.readText() }
             val type = object : TypeToken<List<QuestionData>>() {}.type
             val questionDataList: List<QuestionData> = gson.fromJson(json, type)
@@ -103,11 +104,11 @@ class QuestionRepository(private val context: Context) {
                 Question(
                     id = qd.id,
                     text = qd.text,
-                    options = qd.options,
-                    correct = qd.correct,
+                    options = qd.options ?: emptyMap(),
+                    correct = qd.correct ?: "",
                     explanation = qd.explanation ?: ""
                 )
-            }
+            }.filter { it.correct.isNotEmpty() && it.options.isNotEmpty() }
         } catch (e: Exception) {
             emptyList()
         }

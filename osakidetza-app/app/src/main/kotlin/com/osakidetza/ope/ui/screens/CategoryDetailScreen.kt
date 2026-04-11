@@ -34,9 +34,14 @@ fun CategoryDetailScreen(
 ) {
     val category = viewModel.categories.find { it.id == categoryId }
     val stats by viewModel.getCategoryStats(categoryId).collectAsState()
-    val questionCount = remember(categoryId) { viewModel.getQuestionCount(categoryId) }
+    val questionCounts by viewModel.questionCounts.collectAsState()
+    val questionCount = questionCounts[categoryId] ?: 0
 
-    var selectedCount by remember { mutableIntStateOf(minOf(20, questionCount)) }
+    var selectedCount by remember { mutableIntStateOf(20) }
+    // Update selectedCount once question count is known (loaded asynchronously)
+    LaunchedEffect(questionCount) {
+        if (questionCount > 0) selectedCount = minOf(20, questionCount)
+    }
     val countOptions = buildList {
         if (questionCount >= 10) add(10)
         if (questionCount >= 20) add(20)

@@ -12,6 +12,7 @@ import kotlinx.coroutines.flow.StateFlow
 import kotlinx.coroutines.flow.asStateFlow
 import kotlinx.coroutines.flow.combine
 import kotlinx.coroutines.flow.stateIn
+import kotlinx.coroutines.launch
 
 class HomeViewModel(application: Application) : AndroidViewModel(application) {
 
@@ -32,6 +33,19 @@ class HomeViewModel(application: Application) : AndroidViewModel(application) {
         }
         .stateIn(viewModelScope, SharingStarted.Lazily, categories)
 
+    // Question counts loaded asynchronously on IO dispatcher to avoid main-thread I/O
+    private val _questionCounts = MutableStateFlow<Map<String, Int>>(emptyMap())
+    val questionCounts: StateFlow<Map<String, Int>> = _questionCounts.asStateFlow()
+
+    init {
+        viewModelScope.launch {
+            val counts = categories.associate { cat ->
+                cat.id to repository.loadQuestions(cat.id).size
+            }
+            _questionCounts.value = counts
+        }
+    }
+
     fun onSearchQueryChange(query: String) {
         _searchQuery.value = query
     }
@@ -39,9 +53,5 @@ class HomeViewModel(application: Application) : AndroidViewModel(application) {
     fun getCategoryStats(categoryId: String): StateFlow<CategoryStats> {
         return repository.getCategoryStats(categoryId)
             .stateIn(viewModelScope, SharingStarted.Lazily, CategoryStats(categoryId))
-    }
-
-    fun getQuestionCount(categoryId: String): Int {
-        return repository.loadQuestions(categoryId).size
     }
 }

@@ -34,6 +34,7 @@ fun HomeScreen(
 ) {
     val searchQuery by viewModel.searchQuery.collectAsState()
     val filteredCategories by viewModel.filteredCategories.collectAsState()
+    val questionCounts by viewModel.questionCounts.collectAsState()
 
     Scaffold(
         topBar = {
@@ -117,7 +118,7 @@ fun HomeScreen(
             }
             items(filteredCategories, key = { it.id }) { category ->
                 val stats by viewModel.getCategoryStats(category.id).collectAsState()
-                val questionCount = remember(category.id) { viewModel.getQuestionCount(category.id) }
+                val questionCount = questionCounts[category.id] ?: 0
                 CategoryCard(
                     category = category,
                     stats = stats,
