@@ -30,17 +30,15 @@ jobs:
           distribution: 'temurin'
           cache: gradle
 
-      - name: Set up Android SDK
+      - name: Set up Android SDK tools
         uses: android-actions/setup-android@v3
+
+      - name: Install required SDK components
+        run: |
+          sdkmanager --install "platforms;android-35" "build-tools;34.0.0"
 
       - name: Grant execute permission for gradlew
         run: chmod +x osakidetza-app/gradlew
-        working-directory: .
-
-      - name: Download Gradle wrapper
-        run: |
-          cd osakidetza-app
-          gradle wrapper --gradle-version 8.9
 
       - name: Cache Gradle packages
         uses: actions/cache@v4
@@ -74,12 +72,10 @@ jobs:
           path: osakidetza-app/app/build/outputs/apk/release/app-release.apk
           retention-days: 90
 
-      - name: Get APK info
+      - name: Show APK sizes
         run: |
-          echo "=== Debug APK ==="
-          ls -la osakidetza-app/app/build/outputs/apk/debug/ || true
-          echo "=== Release APK ==="
-          ls -la osakidetza-app/app/build/outputs/apk/release/ || true
+          echo "=== Debug APK ===" && ls -lh osakidetza-app/app/build/outputs/apk/debug/ || true
+          echo "=== Release APK ===" && ls -lh osakidetza-app/app/build/outputs/apk/release/ || true
 
   create-release:
     name: Create GitHub Release
