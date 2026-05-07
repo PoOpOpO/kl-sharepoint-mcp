@@ -1,12 +1,15 @@
 """Gradio user interface for the PatchCore industrial vision tool.
 
-The app exposes two workflows:
+The app exposes the following workflows:
 
-* **Train** – upload a folder of *good* reference images, choose backbone
-  and device, and produce a portable ``.pt`` model file.
-* **Inspect** – load a previously trained model and score a part image,
-  visualising the heat-map and reporting latency in milliseconds so an
-  operator can confirm the <2000 ms budget on a TPV machine.
+* **Train** – build a reference set of *good* images via three
+  interchangeable sources (file upload, server folder loader and live
+  camera capture), preview them in a gallery, then train a portable
+  ``.pt`` model.
+* **Inspect (batch)** – load a model and score every crop emitted from
+  one 4K frame in a single pipeline pass.
+* **Inspect** – load a model and score a single part image, visualising
+  the heat-map and reporting latency in milliseconds.
 """
 
 from __future__ import annotations
@@ -31,6 +34,101 @@ from .model import PatchCore, PatchCoreConfig, benchmark_batch, benchmark_infere
 
 
 _DEFAULT_MODEL_DIR = Path(os.environ.get("PATCHCORE_MODEL_DIR", "./patchcore_models"))
+_REFERENCE_DIR = Path(os.environ.get("PATCHCORE_REFERENCE_DIR", "./patchcore_references"))
+_IMAGE_SUFFIXES = {".png", ".jpg", ".jpeg", ".bmp", ".tif", ".tiff"}
+
+
+def _gallery_payload(refs: list[Image.Image]) -> list[tuple[Image.Image, str]]:
+    return [(img, f"ref {i + 1}") for i, img in enumerate(refs)]
+
+
+def _status(refs: list[Image.Image], message: str = "") -> str:
+    base = f"References loaded: {len(refs)}"
+    return f"{base} — {message}" if message else base
+
+
+def _to_pil(source) -> Image.Image | None:
+    try:
+        if isinstance(source, Image.Image):
+            return source.convert("RGB")
+        if isinstance(source, np.ndarray):
+            return Image.fromarray(source).convert("RGB")
+        if isinstance(source, (str, Path)):
+            return Image.open(source).convert("RGB")
+    except Exception:
+        return None
+    return None
+
+
+def _add_files_handler(files, refs):
+    refs = list(refs or [])
+    added = 0
+    for f in files or []:
+        path = getattr(f, "name", f)
+        img = _to_pil(path)
+        if img is not None:
+            refs.append(img)
+            added += 1
+    return refs, _gallery_payload(refs), _status(refs, f"+{added} from upload")
+
+
+def _add_folder_handler(folder_path: str, refs):
+    refs = list(refs or [])
+    if not folder_path:
+        return refs, _gallery_payload(refs), _status(refs, "no folder given")
+    folder = Path(folder_path).expanduser()
+    if not folder.exists() or not folder.is_dir():
+        return refs, _gallery_payload(refs), _status(refs, f"path not found: {folder}")
+    added = 0
+    for p in sorted(folder.rglob("*")):
+        if p.suffix.lower() in _IMAGE_SUFFIXES:
+            img = _to_pil(p)
+            if img is not None:
+                refs.append(img)
+                added += 1
+    return refs, _gallery_payload(refs), _status(refs, f"+{added} from {folder}")
+
+
+def _add_camera_handler(snapshot, refs):
+    refs = list(refs or [])
+    img = _to_pil(snapshot)
+    if img is None:
+        return refs, _gallery_payload(refs), _status(refs, "no camera frame captured")
+    refs.append(img)
+    return refs, _gallery_payload(refs), _status(refs, "+1 from camera")
+
+
+def _clear_refs_handler():
+    return [], [], _status([], "cleared")
+
+
+def _gallery_select_handler(evt: "gr.SelectData"):
+    return int(evt.index) if evt is not None else -1
+
+
+def _remove_selected_handler(refs, selected_idx):
+    refs = list(refs or [])
+    idx = int(selected_idx) if selected_idx is not None else -1
+    if not (0 <= idx < len(refs)):
+        return refs, _gallery_payload(refs), _status(refs, "select a thumbnail first"), -1
+    removed = refs.pop(idx)
+    del removed
+    return refs, _gallery_payload(refs), _status(refs, f"removed #{idx + 1}"), -1
+
+
+def _save_refs_handler(refs, dataset_name: str):
+    refs = list(refs or [])
+    if not refs:
+        return _status(refs, "nothing to save")
+    name = (dataset_name or "dataset").strip().replace(" ", "_")
+    folder = _REFERENCE_DIR / name
+    folder.mkdir(parents=True, exist_ok=True)
+    saved = 0
+    for i, img in enumerate(refs):
+        out = folder / f"ref_{i + 1:04d}.png"
+        img.save(out, format="PNG")
+        saved += 1
+    return _status(refs, f"saved {saved} images to {folder}")
 
 
 def _device_choices() -> list[str]:
@@ -65,7 +163,7 @@ def _heatmap_overlay(image: Image.Image, anomaly_map: np.ndarray, alpha: float =
 
 
 def _train_handler(
-    files: list,
+    refs: list,
     backbone: str,
     device: str,
     image_size: int,
@@ -75,10 +173,14 @@ def _train_handler(
     output_name: str,
     progress: "gr.Progress | None" = gr.Progress(track_tqdm=False),
 ):
-    if not files:
-        return "❌ Provide at least one reference image.", None, None
+    refs = list(refs or [])
+    if not refs:
+        return (
+            "❌ Add at least one reference image (upload, folder or camera capture).",
+            None,
+            None,
+        )
 
-    paths = [Path(getattr(f, "name", f)) for f in files]
     config = PatchCoreConfig(
         backbone=backbone,
         image_size=int(image_size),
@@ -92,9 +194,9 @@ def _train_handler(
             progress(done / max(total, 1), desc=f"Extracting features {done}/{total}")
 
     train_start = time.perf_counter()
-    stats = detector.fit(paths, batch_size=4, progress_cb=_cb)
+    stats = detector.fit(refs, batch_size=4, progress_cb=_cb)
     threshold = detector.calibrate(
-        paths,
+        refs,
         quantile=float(calibrate_quantile),
         margin=float(margin),
     )
@@ -224,12 +326,72 @@ def build_interface() -> "gr.Blocks":
         )
 
         with gr.Tab("Train"):
+            gr.Markdown(
+                "Build the reference set of *good* parts from any "
+                "combination of three sources, then train the model. "
+                "All sources append to the same gallery; train when you "
+                "are happy with the selection."
+            )
+            references_state = gr.State([])
+            selected_index_state = gr.State(-1)
+
             with gr.Row():
-                with gr.Column():
-                    train_files = gr.File(
-                        file_count="multiple",
-                        file_types=["image"],
-                        label="Reference 'good' images",
+                with gr.Column(scale=1):
+                    with gr.Tabs():
+                        with gr.TabItem("Upload files"):
+                            files_input = gr.File(
+                                file_count="multiple",
+                                file_types=["image"],
+                                label="Pick one or more 'good' images",
+                            )
+                            add_files_btn = gr.Button("Add to references")
+                        with gr.TabItem("Folder on server"):
+                            folder_input = gr.Textbox(
+                                label="Folder path on the server",
+                                placeholder="/data/good_parts",
+                            )
+                            add_folder_btn = gr.Button("Load folder")
+                        with gr.TabItem("Camera capture"):
+                            gr.Markdown(
+                                "Use the workstation camera to grab "
+                                "reference frames. Position the part, "
+                                "click **Capture frame** for every angle "
+                                "or sample you want to include."
+                            )
+                            camera_input = gr.Image(
+                                sources=["webcam", "upload"],
+                                type="pil",
+                                label="Live camera",
+                                streaming=False,
+                            )
+                            capture_btn = gr.Button("Capture frame", variant="primary")
+                            gr.Markdown(
+                                "Tip: if the inspection camera is a 4K "
+                                "industrial camera (RTSP/GenICam), "
+                                "publish it as a local MJPEG stream and "
+                                "select it as the browser webcam, or "
+                                "drop pre-captured frames in the "
+                                "Upload/Folder tabs."
+                            )
+
+                    with gr.Row():
+                        clear_btn = gr.Button("Clear all", variant="secondary")
+                        remove_btn = gr.Button("Remove selected", variant="secondary")
+                    dataset_name = gr.Textbox(
+                        value="dataset",
+                        label="Dataset name (used when saving captures to disk)",
+                    )
+                    save_refs_btn = gr.Button("Save references to disk")
+                    refs_status = gr.Textbox(
+                        label="Reference status", value=_status([]), interactive=False
+                    )
+
+                with gr.Column(scale=1):
+                    refs_gallery = gr.Gallery(
+                        label="Selected references",
+                        columns=4,
+                        height=360,
+                        allow_preview=True,
                     )
                     backbone = gr.Dropdown(
                         choices=["resnet18", "resnet50"],
@@ -262,14 +424,47 @@ def build_interface() -> "gr.Blocks":
                         label="Output file name",
                     )
                     train_btn = gr.Button("Train", variant="primary")
-                with gr.Column():
                     train_log = gr.Textbox(label="Status", lines=5)
                     train_report = gr.JSON(label="Report")
                     train_artifact = gr.File(label="Trained model file")
+
+            add_files_btn.click(
+                _add_files_handler,
+                inputs=[files_input, references_state],
+                outputs=[references_state, refs_gallery, refs_status],
+            )
+            add_folder_btn.click(
+                _add_folder_handler,
+                inputs=[folder_input, references_state],
+                outputs=[references_state, refs_gallery, refs_status],
+            )
+            capture_btn.click(
+                _add_camera_handler,
+                inputs=[camera_input, references_state],
+                outputs=[references_state, refs_gallery, refs_status],
+            )
+            clear_btn.click(
+                _clear_refs_handler,
+                outputs=[references_state, refs_gallery, refs_status],
+            )
+            refs_gallery.select(
+                _gallery_select_handler,
+                outputs=[selected_index_state],
+            )
+            remove_btn.click(
+                _remove_selected_handler,
+                inputs=[references_state, selected_index_state],
+                outputs=[references_state, refs_gallery, refs_status, selected_index_state],
+            )
+            save_refs_btn.click(
+                _save_refs_handler,
+                inputs=[references_state, dataset_name],
+                outputs=[refs_status],
+            )
             train_btn.click(
                 _train_handler,
                 inputs=[
-                    train_files,
+                    references_state,
                     backbone,
                     device,
                     image_size,

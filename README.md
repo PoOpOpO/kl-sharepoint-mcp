@@ -128,9 +128,26 @@ patchcore-vision benchmark model.pt --device cpu \
 patchcore-vision serve --host 0.0.0.0 --port 7860
 ```
 
-The Gradio interface exposes a **Train** tab (drag-and-drop reference
-images, choose backbone / device, save model) and an **Inspect** tab
-(load model, drop image, see verdict + heat-map + per-frame latency).
+The Gradio interface exposes:
+
+* **Train** – build the reference set from any combination of three
+  sources, all feeding the same gallery preview:
+  * **Upload files** – drag-and-drop one or more "good" images.
+  * **Folder on server** – type a path on the server and load every
+    image found recursively (PNG/JPG/BMP/TIFF).
+  * **Camera capture** – grab live frames from the workstation
+    webcam (or any browser-selectable camera, including a local
+    MJPEG re-stream of an industrial RTSP/GenICam camera). Click
+    *Capture frame* once per angle / sample you want to include.
+  * Pick any thumbnail to highlight it, then *Remove selected* to
+    drop just that one. *Clear all* empties the gallery.
+  * *Save references to disk* writes the current selection to
+    `./patchcore_references/<dataset>/` so it can be reused later.
+* **Inspect (batch)** – drop the ~100 crops produced from a 4K frame,
+  the GUI reports total wall-clock + per-crop latency vs the 2000 ms
+  budget plus a per-crop verdict table.
+* **Inspect** – load a model, drop a single image, see verdict, heat-map
+  overlay and per-frame latency.
 
 ### Python API
 
