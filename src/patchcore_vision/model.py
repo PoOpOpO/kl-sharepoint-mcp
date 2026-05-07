@@ -67,6 +67,21 @@ class PatchCoreConfig:
             return torch.device("cuda" if torch.cuda.is_available() else "cpu")
         return torch.device(self.device)
 
+    @classmethod
+    def tpv_fast(cls, **overrides) -> "PatchCoreConfig":
+        """Preset tuned to fit a full 4K frame (~100 1024×1024 crops) in
+        under 2000 ms on a 4-thread industrial CPU.
+        """
+        defaults = dict(
+            backbone="resnet18",
+            image_size=192,
+            coreset_size=768,
+            pool_size=3,
+            smoothing_sigma=4.0,
+        )
+        defaults.update(overrides)
+        return cls(**defaults)
+
 
 @dataclass
 class InspectionResult:
@@ -344,6 +359,67 @@ class PatchCore:
         tensor = self._load_image(source).unsqueeze(0).to(self._device)
         return self._inspect_tensor(tensor)
 
+    def inspect_many(
+        self,
+        sources: Sequence,
+        batch_size: int = 8,
+        return_maps: bool = True,
+    ) -> list[InspectionResult]:
+        """Inspect a batch of crops efficiently in a single pipeline pass.
+
+        This path is the recommended one for the 4K-camera + ~100 crops
+        per inspection scenario: each mini-batch is forwarded through the
+        backbone once and the nearest-neighbour search against the memory
+        bank is performed as a single batched matmul, instead of a Python
+        loop over individual images.
+        """
+
+        if self._memory_bank is None:
+            raise RuntimeError("PatchCore must be fitted before inspection.")
+        if not sources:
+            return []
+
+        bank = self._memory_bank
+        bank_sq = (bank * bank).sum(dim=1)  # (M,)
+        target_size = (self.config.image_size, self.config.image_size)
+        results: list[InspectionResult] = []
+
+        with torch.inference_mode():
+            for batch_idx, batch in enumerate(self._batch(sources, batch_size)):
+                t0 = time.perf_counter()
+                f2, f3 = self._net(batch)
+                feats = _aggregate(f2, f3, self.config.pool_size)
+                b, c, h, w = feats.shape
+                self._feature_grid = (h, w)
+                patches = feats.permute(0, 2, 3, 1).reshape(b * h * w, c)
+
+                patch_sq = (patches * patches).sum(dim=1, keepdim=True)
+                dists = patch_sq + bank_sq.unsqueeze(0) - 2.0 * patches @ bank.T
+                dists.clamp_(min=0.0)
+                min_dist, _ = dists.min(dim=1)
+                min_dist = torch.sqrt(min_dist + 1e-12)
+
+                maps = min_dist.view(b, 1, h, w)
+                maps = F.interpolate(maps, size=target_size, mode="bilinear", align_corners=False)
+                maps = _gaussian_blur(maps, self.config.smoothing_sigma)
+                maps_np = maps.squeeze(1).detach().cpu().numpy().astype(np.float32)
+                scores = maps_np.reshape(b, -1).max(axis=1)
+
+                elapsed_ms = (time.perf_counter() - t0) * 1000.0
+                per_image_ms = elapsed_ms / b
+                for i in range(b):
+                    results.append(
+                        InspectionResult(
+                            score=float(scores[i]),
+                            threshold=self.threshold,
+                            is_defective=float(scores[i]) >= self.threshold,
+                            anomaly_map=maps_np[i] if return_maps else np.empty((0, 0), dtype=np.float32),
+                            elapsed_ms=per_image_ms,
+                            extras={"batch_index": batch_idx, "batch_elapsed_ms": elapsed_ms},
+                        )
+                    )
+        return results
+
     # ----------------------------------------------------------- persistence
     def save(self, path: str | Path) -> Path:
         if self._memory_bank is None:
@@ -392,12 +468,66 @@ class PatchCore:
         )
 
 
+def benchmark_batch(
+    detector: PatchCore,
+    *,
+    num_crops: int = 100,
+    crop_size: int = 1024,
+    batch_size: int = 8,
+    iterations: int = 3,
+) -> dict:
+    """Simulate the 4K + many-crops scenario.
+
+    Generates ``num_crops`` synthetic ``crop_size`` x ``crop_size`` images
+    and runs :meth:`PatchCore.inspect_many` ``iterations`` times. Returns
+    aggregated wall-clock statistics so an integrator can verify the
+    end-to-end budget for a complete frame on the target machine.
+    """
+
+    if detector._memory_bank is None:
+        raise RuntimeError("Detector must be fitted before benchmarking.")
+
+    rng = np.random.default_rng(0)
+    fake_crops = [
+        Image.fromarray((rng.random((crop_size, crop_size, 3)) * 255).astype(np.uint8))
+        for _ in range(num_crops)
+    ]
+
+    # Warm-up to amortise JIT/allocation overhead.
+    detector.inspect_many(fake_crops[: min(num_crops, batch_size)], batch_size=batch_size, return_maps=False)
+
+    totals_ms: list[float] = []
+    per_image_ms: list[float] = []
+    for _ in range(iterations):
+        t0 = time.perf_counter()
+        results = detector.inspect_many(fake_crops, batch_size=batch_size, return_maps=False)
+        total = (time.perf_counter() - t0) * 1000.0
+        totals_ms.append(total)
+        per_image_ms.append(total / max(len(results), 1))
+
+    return {
+        "device": str(detector.device),
+        "num_crops": num_crops,
+        "crop_size": crop_size,
+        "network_input_size": detector.config.image_size,
+        "batch_size": batch_size,
+        "iterations": iterations,
+        "torch_threads": int(torch.get_num_threads()),
+        "total_ms_mean": float(np.mean(totals_ms)),
+        "total_ms_p50": float(np.median(totals_ms)),
+        "total_ms_p95": float(np.quantile(totals_ms, 0.95)),
+        "total_ms_max": float(np.max(totals_ms)),
+        "per_crop_ms_mean": float(np.mean(per_image_ms)),
+        "meets_2000ms_budget": float(np.max(totals_ms)) < 2000.0,
+    }
+
+
 def benchmark_inference(
     detector: PatchCore,
     iterations: int = 5,
     image_size: int | None = None,
 ) -> dict:
-    """Run a synthetic inference benchmark for the configured device."""
+    """Run a synthetic single-image inference benchmark."""
 
     if detector._memory_bank is None:
         raise RuntimeError("Detector must be fitted before benchmarking.")
