@@ -91,6 +91,64 @@ Use the [MCP Inspector](https://github.com/modelcontextprotocol/inspector) to de
 npx @modelcontextprotocol/inspector -- python -m mcp_sharepoint
 ```
 
+## PatchCore Industrial Vision Tool
+
+This repository also ships a self-contained PatchCore-based anomaly
+detector (`patchcore_vision` package) for industrial inspection on
+TPV / point-of-sale hardware. It supports both CPU and GPU and is
+tuned to stay below 2000 ms per inspection on commodity CPUs.
+
+### Install
+
+```bash
+pip install -e '.[vision]'
+```
+
+### Train and inspect from the CLI
+
+```bash
+# Train from a folder of "good" reference images
+patchcore-vision train ./dataset/good -o model.pt --backbone resnet18 --device auto
+
+# Inspect a single part on CPU
+patchcore-vision inspect model.pt ./samples/part_42.jpg --device cpu
+
+# Confirm the 2000 ms latency budget on the target machine
+patchcore-vision benchmark model.pt --device cpu --iterations 20
+```
+
+### Launch the easy-to-use GUI
+
+```bash
+patchcore-vision serve --host 0.0.0.0 --port 7860
+```
+
+The Gradio interface exposes a **Train** tab (drag-and-drop reference
+images, choose backbone / device, save model) and an **Inspect** tab
+(load model, drop image, see verdict + heat-map + per-frame latency).
+
+### Python API
+
+```python
+from patchcore_vision import PatchCore, PatchCoreConfig
+
+detector = PatchCore(PatchCoreConfig(backbone="resnet18", device="cpu"))
+detector.fit(["good/01.png", "good/02.png", "good/03.png"])
+detector.calibrate(["good/01.png", "good/02.png", "good/03.png"])
+result = detector.inspect("part.png")
+print(result.score, result.is_defective, f"{result.elapsed_ms:.0f} ms")
+detector.save("model.pt")
+```
+
+### Latency tips for TPV CPUs
+
+* Default config (ResNet-18, 224 px input, 1024-element coreset) keeps
+  inference well under 2000 ms on typical industrial CPUs.
+* Decrease `image_size` to 192 or 160 and/or `coreset_size` to 512 if
+  you need more headroom.
+* Set `device="cuda"` during training (much faster) and reload the
+  model with `device="cpu"` for production inspection.
+
 ## License
 
 This project is released under the [MIT License](LICENSE).
